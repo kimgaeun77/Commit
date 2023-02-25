@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="my">
+
+    <update id="updateInfo" parameterType="hashmap">
+
+        UPDATE MEMBER
+        SET
+        MEM_PW = #{MEM_PW},
+        MEM_NAME = #{MEM_NAME},
+
+        <if test="PHONE != NULL and !('').equals(PHONE)">
+            PHONE = #{PHONE},
+        </if>
+
+        <if test="ZIPCODE != NULL and !('').equals(ZIPCODE) ">
+            ZIPCODE = #{ZIPCODE},
+        </if>
+
+        <if test="ADDRESS != NULL and !('').equals(ADDRESS) ">
+            ADDRESS = #{ADDRESS},
+        </if>
+
+        EMAIL_AGREE = #{EMAIL_AGREE}
+        WHERE MEM_ID = #{MEM_ID}
+
+    </update>
+
+
+    <update id="deleteInfo" parameterType="hashmap">
+
+        UPDATE MEMBER
+        SET DEL = 'Y'
+        WHERE MEM_ID = #{MEM_ID}
+
+    </update>
+
+
+    <select id="selectOrderList" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT D.*, PRODUCT.NAME, PRODUCT.MAIN_IMG
+        FROM (SELECT B.*, TO_CHAR(C.REG_DATE, 'YYYY-MM-DD') AS ORDER_DATE, C.TOTAL_PRICE, C.STATE
+              FROM (SELECT *
+                    FROM (SELECT ROW_NUMBER() OVER (PARTITION BY ORDER_IDX ORDER BY PRO_IDX DESC)AS NUM, PRO_ORDER.*
+                          FROM PRO_ORDER) A
+                    WHERE NUM = 1) B
+                       LEFT JOIN ORDER_INFO C ON B.ORDER_IDX = C.ORDER_IDX
+              WHERE MEM_ID = #{MEM_ID}) D
+                 LEFT JOIN PRODUCT ON D.PRO_IDX = PRODUCT.PRO_IDX
+        ORDER BY ORDER_IDX DESC
+
+    </select>
+
+
+    <select id="selectFromOrder" parameterType="hashmap" resultType="hashmap">
+
+        SELECT A.*,
+               B.NAME,
+               B.MAIN_IMG,
+               B.PRICE,
+               (A.AMOUNT * B.PRICE) AS AMOUNT_PRICE
+        FROM (SELECT * FROM PRO_ORDER WHERE ORDER_IDX = #{ORDER_IDX}) A
+                 LEFT JOIN PRODUCT B ON A.PRO_IDX = B.PRO_IDX
+
+    </select>
+
+
+    <select id="selectFromOrderInfo" parameterType="hashmap" resultType="hashmap">
+
+        SELECT A.*, B.CP_DISCOUNT, B.CP_NAME
+        FROM (SELECT ORDER_IDX,
+                     MEM_ID,
+                     NAME,
+                     ZIPCODE,
+                     ADDRESS,
+                     PHONE,
+                     REQUEST,
+                     TO_CHAR(REG_DATE, 'YY/MM/DD') AS ORDER_DATE,
+                     CP_IDX,
+                     TOTAL_PRICE,
+                     PAY_TYPE,
+                     STATE
+              FROM ORDER_INFO
+              WHERE ORDER_IDX = #{ORDER_IDX}) A
+                 LEFT JOIN COUPON_INFO B ON A.CP_IDX = B.CP_INFO_IDX
+
+    </select>
+
+
+    <select id="selectQnaList" parameterType="hashmap" resultType="hashmap">
+
+        SELECT QNA_IDX,
+               TITLE,
+               TO_CHAR(REG_DATE, 'YY/MM/DD') AS REG_DATE,
+               MEM_ID,
+               QNA_TYPE,
+               STATE
+        FROM QNA
+        WHERE MEM_ID = #{MEM_ID}
+          AND DEL = 'N'
+        ORDER BY QNA_IDX DESC
+
+    </select>
+
+
+    <!-- 어떤 상품에 대해 문의를 남겼는지 상품의 사진과 이름을 가져옴 -->
+    <select id="selectQnaDetail" parameterType="hashmap" resultType="hashmap">
+
+        SELECT A.QNA_IDX,
+               A.PRO_IDX,
+               TITLE,
+               CONTENT,
+               MEM_ID,
+               A.REG_DATE,
+               PRODUCT.NAME,
+               PRODUCT.MAIN_IMG,
+               PRODUCT.PRICE
+        FROM (SELECT QNA_IDX, PRO_IDX, TITLE, MEM_ID, CONTENT, TO_CHAR(REG_DATE, 'YYYY-MM-DD') AS REG_DATE
+              FROM QNA
+              WHERE QNA_IDX = #{QNA_IDX}
+                AND DEL = 'N') A
+                 LEFT JOIN PRODUCT ON A.PRO_IDX = PRODUCT.PRO_IDX
+
+    </select>
+
+
+    <select id="selectCouponList" parameterType="hashmap" resultType="hashmap">
+
+    <![CDATA[
+        SELECT A.*,
+               COUPON_INFO.CP_NAME,
+               COUPON_INFO.CP_DISCOUNT,
+               TO_CHAR(COUPON_INFO.START_DATE, 'YY/MM/DD') AS START_DATE,
+               TO_CHAR(COUPON_INFO.END_DATE, 'YY/MM/DD')   AS END_DATE
+        FROM (SELECT * FROM MEMBER_CP WHERE MEM_ID = #{MEM_ID} AND DEL = 'N') A
+                 LEFT JOIN COUPON_INFO ON A.CP_IDX = COUPON_INFO.CP_INFO_IDX
+        WHERE END_DATE >= TRUNC(SYSDATE, 'DD')
+        ORDER BY COUPON_INFO.END_DATE ASC
+        ]]>
+
+    </select>
+
+
+</mapper>

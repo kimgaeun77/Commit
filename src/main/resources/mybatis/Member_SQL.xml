@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+
+    <select id="confirmId" parameterType="hashmap"
+            resultType="int">
+
+        SELECT COUNT(MEM_ID)
+        FROM MEMBER
+        WHERE MEM_ID = LOWER(#{MEM_ID})
+
+	</select>
+
+
+    <select id="confirmEmail" parameterType="hashmap"
+            resultType="int">
+
+        SELECT COUNT(EMAIL)
+        FROM MEMBER
+        WHERE EMAIL = LOWER(#{EMAIL})
+
+	</select>
+
+
+    <insert id="insertMember" parameterType="hashmap">
+
+        INSERT INTO MEMBER
+        (
+        MEM_IDX,
+        MEM_ID,
+        MEM_PW,
+        MEM_NAME,
+
+        <if test="PHONE != NULL and !('').equals(PHONE)">
+            PHONE,
+        </if>
+
+        <if test="ZIPCODE != NULL and !('').equals(ZIPCODE) ">
+            ZIPCODE,
+        </if>
+
+        <if test="ADDRESS != NULL and !('').equals(ADDRESS) ">
+            ADDRESS,
+        </if>
+
+        <if test="OAUTH != NULL and !('').equals(OAUTH) ">
+            OAUTH,
+        </if>
+
+        EMAIL,
+        EMAIL_AGREE
+        )
+        VALUES
+        (
+        MEMBER_SEQ.NEXTVAL,
+        LOWER(#{MEM_ID}),
+        #{MEM_PW},
+        #{MEM_NAME},
+
+        <if test="PHONE != NULL and !('').equals(PHONE)">
+            #{PHONE},
+        </if>
+
+        <if test="ZIPCODE != NULL and !('').equals(ZIPCODE)">
+            #{ZIPCODE},
+        </if>
+
+        <if test="ADDRESS != NULL and !('').equals(ADDRESS)">
+            #{ADDRESS},
+        </if>
+
+        <if test="OAUTH != NULL and !('').equals(OAUTH) ">
+            #{OAUTH},
+        </if>
+
+        LOWER(#{EMAIL}),
+        #{EMAIL_AGREE}
+        )
+
+    </insert>
+
+
+    <select id="selectMemberDetail" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT MEM_ID,
+               MEM_PW,
+               MEM_NAME,
+               PHONE,
+               ZIPCODE,
+               ADDRESS,
+               EMAIL,
+               EMAIL_AGREE,
+               ADMIN,
+               OAUTH
+        FROM MEMBER
+        WHERE MEM_ID = LOWER(#{MEM_ID})
+          AND DEL = 'N'
+
+	</select>
+
+    <select id="selectMemberByInfo" parameterType="hashmap" resultType="int">
+
+        SELECT COUNT(*)
+        FROM MEMBER
+        WHERE
+        <if test="findID != NULL">
+            MEM_NAME = #{MEM_NAME} AND PHONE = #{PHONE}
+        </if>
+        <if test="findID == NULL">
+            MEM_ID = LOWER(#{MEM_ID}) AND EMAIL = LOWER(#{EMAIL})
+        </if>
+
+    </select>
+
+
+    <select id="findID" parameterType="hashmap" resultType="String">
+
+        SELECT MEM_ID
+        FROM MEMBER
+        WHERE MEM_NAME = #{MEM_NAME}
+          AND PHONE = #{PHONE}
+
+	</select>
+
+
+    <update id="updateTempPW" parameterType="hashmap">
+
+        UPDATE
+            MEMBER
+        SET MEM_PW = #{TEMP_PW}
+        WHERE MEM_ID = LOWER(#{MEM_ID})
+
+	</update>
+
+</mapper>

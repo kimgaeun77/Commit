@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="review">
+
+    <select id="selectMyReviewList" parameterType="hashmap" resultType="hashmap">
+
+        SELECT A.REVIEW_IDX,
+               A.TITLE,
+               A.CONTENT,
+               A.REG_DATE,
+               A.PRO_IDX,
+               A.MEM_ID,
+               B.MAIN_IMG,
+               B.NAME
+        FROM (SELECT REVIEW_IDX,
+                     PRO_IDX,
+                     MEM_ID,
+                     ORDER_IDX,
+                     TITLE,
+                     CONTENT,
+                     TO_CHAR(REG_DATE, 'YY/MM/DD') AS REG_DATE
+              FROM REVIEW
+              WHERE MEM_ID = #{MEM_ID}
+                AND DEL = 'N') A
+                 LEFT JOIN PRODUCT B ON A.PRO_IDX = B.PRO_IDX
+        ORDER BY REG_DATE DESC
+
+	</select>
+
+
+    <insert id="insertReview" parameterType="hashmap">
+
+        INSERT INTO REVIEW
+        (
+         REVIEW_IDX,
+         PRO_IDX,
+         MEM_ID,
+         ORDER_IDX,
+         TITLE,
+         CONTENT
+         )
+        VALUES
+        (
+         REVIEW_SEQ.NEXTVAL,
+         #{PRO_IDX},
+         #{MEM_ID},
+         #{ORDER_IDX},
+         #{TITLE},
+         #{CONTENT}
+        )
+
+    </insert>
+
+
+    <update id="deleteReview" parameterType="hashmap">
+
+        UPDATE REVIEW
+        SET DEL = 'Y'
+        WHERE REVIEW_IDX = #{REVIEW_IDX}
+
+    </update>
+
+    <select id="checkValid" parameterType="hashmap" resultType="int">
+
+	<![CDATA[
+        SELECT COUNT(*)
+        FROM ORDER_INFO A
+                 LEFT JOIN PRO_ORDER B ON A.ORDER_IDX = B.ORDER_IDX
+        WHERE A.ORDER_IDX = #{ORDER_IDX}
+          -- 주문자 ID와 현재 로그인 되어있는 사용자의 ID가 동일해야 함
+          AND MEM_ID = #{MEM_ID}
+          AND PRO_IDX = #{PRO_IDX}
+          -- 배송 상태가 배송 완료여야 함(=D)
+          AND STATE = 'D'
+        ]]>
+
+	</select>
+
+    <select id="checkOverlap" parameterType="hashmap" resultType="int">
+
+        SELECT COUNT(*)
+        FROM REVIEW
+        WHERE ORDER_IDX = #{ORDER_IDX}
+          AND PRO_IDX = #{PRO_IDX}
+          AND MEM_ID = #{MEM_ID}
+          AND DEL = 'N'
+
+    </select>
+
+    <select id="selectReview" parameterType="hashmap" resultType="hashmap">
+
+        SELECT * FROM REVIEW
+                 WHERE REVIEW_IDX = #{REVIEW_IDX}
+
+    </select>
+
+
+</mapper>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="basket">
+
+    <select id="selectBasketList" parameterType="hashmap" resultType="hashmap">
+
+        SELECT B.*,
+               PRODUCT.NAME,
+               PRODUCT.PRICE,
+               PRODUCT.MAIN_IMG
+        FROM BASKET B
+                 LEFT JOIN PRODUCT ON B.PRO_IDX = PRODUCT.PRO_IDX
+        WHERE MEM_ID = #{MEM_ID}
+
+    </select>
+
+
+    <update id="updateBasket" parameterType="hashmap">
+
+        UPDATE BASKET
+        SET AMOUNT = #{AMOUNT}
+        WHERE PRO_IDX = #{PRO_IDX}
+          AND MEM_ID = #{MEM_ID}
+
+    </update>
+
+
+    <update id="updateAmount" parameterType="hashmap">
+
+        UPDATE BASKET
+        SET AMOUNT = AMOUNT + #{AMOUNT}
+        WHERE PRO_IDX = #{PRO_IDX}
+          AND MEM_ID = #{MEM_ID}
+
+    </update>
+
+
+    <delete id="deleteBasket" parameterType="hashmap">
+
+        DELETE
+        BASKET
+	    	WHERE MEM_ID =#{MEM_ID}
+        AND
+            PRO_IDX = #{PRO_IDX}
+
+    </delete>
+
+
+    <delete id="clearBasket" parameterType="hashmap">
+
+        DELETE
+        BASKET
+	    	WHERE MEM_ID = #{MEM_ID}
+
+    </delete>
+
+
+    <insert id="insertBasket" parameterType="hashmap">
+
+        INSERT INTO BASKET
+        (
+         PRO_IDX,
+         AMOUNT,
+         MEM_ID
+         )
+        VALUES
+         (
+          #{PRO_IDX},
+          #{AMOUNT},
+          #{MEM_ID}
+          )
+
+    </insert>
+
+
+    <select id="checkBasket" parameterType="hashmap" resultType="int">
+
+        SELECT COUNT(*)
+        FROM BASKET
+        WHERE MEM_ID = #{MEM_ID}
+          AND PRO_IDX = #{PRO_IDX}
+
+    </select>
+
+</mapper>

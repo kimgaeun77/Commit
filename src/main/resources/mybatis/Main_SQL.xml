@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="main">
+
+    <select id="selectGamePC" resultType="hashmap">
+
+        SELECT B.*
+        FROM (SELECT A.*, ROWNUM RNUM
+              FROM (SELECT PRO_IDX,
+                           NAME,
+                           PRICE,
+                           CATEGORY,
+                           MAIN_IMG,
+                           ORDER_CNT
+                    FROM PRODUCT
+                    WHERE CATEGORY = 'GAMING'
+                    ORDER BY ORDER_CNT DESC) A) B
+        WHERE RNUM BETWEEN 1 AND 4
+
+    </select>
+
+
+    <select id="selectOfficePC" resultType="hashmap">
+
+        SELECT B.*
+        FROM (SELECT A.*, ROWNUM RNUM
+              FROM (SELECT PRO_IDX,
+                           NAME,
+                           PRICE,
+                           CATEGORY,
+                           MAIN_IMG,
+                           ORDER_CNT
+                    FROM PRODUCT
+                    WHERE CATEGORY = 'OFFICE'
+                    ORDER BY ORDER_CNT DESC) A) B
+        WHERE RNUM BETWEEN 1 AND 4
+
+    </select>
+
+</mapper>

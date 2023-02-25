@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="qna">
+
+
+    <insert id="insertAnswer" parameterType="hashmap"
+            useGeneratedKeys="true" keyProperty="QNA_IDX">
+
+        <selectKey keyProperty="QNA_IDX" resultType="string"
+                   order="BEFORE">
+
+            SELECT QNA_SEQ.NEXTVAL FROM DUAL
+
+        </selectKey>
+
+        INSERT INTO QNA
+        (
+        QNA_IDX,
+        PRO_IDX,
+        REF,
+        RE_STEP,
+        TITLE,
+        CONTENT,
+        MEM_ID
+        )
+        VALUES
+        (
+        #{QNA_IDX},
+        #{PRO_IDX},
+        #{ROOT_IDX},
+        1,
+        #{TITLE},
+        #{CONTENT},
+        'COMMIT'
+
+        )
+
+    </insert>
+
+
+    <insert id="insertQuestion" parameterType="hashmap"
+            useGeneratedKeys="true" keyProperty="QNA_IDX">
+
+        <selectKey keyProperty="QNA_IDX" resultType="string"
+                   order="BEFORE">
+
+            SELECT QNA_SEQ.NEXTVAL FROM DUAL
+
+        </selectKey>
+
+        INSERT INTO QNA
+        (
+        QNA_IDX,
+        PRO_IDX,
+        REF,
+        QNA_TYPE,
+        TITLE,
+        CONTENT,
+        MEM_ID
+        )
+        VALUES
+        (
+        #{QNA_IDX},
+        #{PRO_IDX},
+        #{QNA_IDX},
+        #{QNA_TYPE},
+        #{TITLE},
+        #{CONTENT},
+        #{MEM_ID}
+        )
+
+    </insert>
+
+
+    <update id="updateState" parameterType="hashmap">
+
+        UPDATE QNA
+        SET STATE = 'Y'
+        WHERE QNA_IDX = #{ROOT_IDX}
+
+    </update>
+
+
+    <select id="detailQna" parameterType="hashmap" resultType="hashmap">
+
+        SELECT QNA_IDX,
+               PRO_IDX,
+               TITLE,
+               CONTENT,
+               TO_CHAR(REG_DATE, 'YYYY-MM-DD') AS REG_DATE,
+               STATE,
+               REF,
+               MEM_ID
+        FROM QNA
+        WHERE QNA_IDX = #{QNA_IDX}
+          AND DEL = 'N'
+
+    </select>
+
+
+    <update id="updateQna" parameterType="hashmap">
+
+        UPDATE QNA
+        SET CONTENT = #{CONTENT}
+        WHERE QNA_IDX = #{QNA_IDX}
+
+    </update>
+
+
+    <update id="deleteQna" parameterType="hashmap">
+
+        UPDATE QNA SET
+        DEL = 'Y'
+        WHERE REF = #{REF}
+
+        <if test="admin != null">
+            AND RE_STEP = 1
+        </if>
+
+    </update>
+
+</mapper>

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="admin">
+
+    <select id="selectOrderList" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT *
+        FROM (SELECT ROWNUM RNUM, A.*
+              FROM (SELECT ORDER_IDX,
+                           MEM_ID,
+                           TO_CHAR(REG_DATE, 'YY/MM/DD') AS ORDER_DATE,
+                           STATE,
+                           TOTAL_PRICE,
+                           PAY_TYPE
+                    FROM ORDER_INFO
+                    ORDER BY STATE ASC, ORDER_IDX ASC) A)
+        WHERE RNUM BETWEEN #{START_ROW} AND #{END_ROW}
+
+    </select>
+
+
+    <update id="updateOrder" parameterType="hashmap">
+
+        UPDATE ORDER_INFO
+        SET STATE = #{STATE}
+        WHERE ORDER_IDX = #{ORDER_IDX}
+
+    </update>
+
+
+    <select id="selectMemberList" parameterType="hashmap" resultType="hashmap">
+
+        SELECT * FROM(
+        SELECT
+        ROWNUM RNUM ,
+        MEM_IDX,
+        MEM_ID,
+        MEM_NAME,
+        PHONE,
+        TO_CHAR(REG_DATE, 'YY/MM/DD')AS REG_DATE
+        FROM
+        MEMBER WHERE DEL = 'N'
+
+        <if test="TYPE != null and KEYWORD != null and !TYPE.equals('') and !KEYWORD.equals('')">
+            AND LOWER(${TYPE}) LIKE LOWER('%'||TRIM(#{KEYWORD})||'%')
+        </if>
+
+        ORDER BY MEM_IDX DESC) WHERE RNUM BETWEEN #{START_ROW} AND #{END_ROW}
+
+    </select>
+
+
+    <select id="countMemberRecord" parameterType="hashmap" resultType="int">
+
+        SELECT
+        COUNT(*)
+        FROM MEMBER WHERE DEL = 'N'
+
+        <if test="TYPE != null and KEYWORD != null and !TYPE.equals('') and !KEYWORD.equals('')">
+            AND LOWER(${TYPE}) LIKE LOWER('%'||TRIM(#{KEYWORD})||'%')
+        </if>
+
+    </select>
+
+
+    <select id="countOrderRecord" resultType="int">
+
+        SELECT COUNT(*)
+        FROM ORDER_INFO
+
+    </select>
+
+
+    <select id="selectMemberDetail" parameterType="hashmap" resultType="hashmap">
+
+        SELECT MEM_IDX,
+               MEM_ID,
+               MEM_NAME,
+               PHONE,
+               ZIPCODE,
+               ADDRESS,
+               TO_CHAR(REG_DATE, 'YYYY-MM-DD') AS REG_DATE,
+               EMAIL
+        FROM MEMBER
+        WHERE MEM_ID = #{MEM_ID}
+          AND DEL = 'N'
+
+    </select>
+
+
+    <update id="deleteMember" parameterType="hashmap">
+
+        UPDATE
+            MEMBER
+        SET DEL ='Y'
+        WHERE MEM_ID = #{MEM_ID}
+
+    </update>
+
+
+    <select id="selectProductList" parameterType="hashmap" resultType="hashmap">
+
+        SELECT * FROM
+        (SELECT
+        ROWNUM RNUM,
+        PRO_IDX,
+        PRO_GROUP,
+        NAME,
+        CATEGORY,
+        TO_CHAR(REG_DATE, 'YY/MM/DD') AS REG_DATE,
+        ORDER_CNT,
+        STOCK,
+        PRICE,
+        MAIN_IMG,
+        ORIGINAL_NAME
+        FROM PRODUCT WHERE DEL = 'N'
+
+        <if test="TYPE != null and KEYWORD != null and !TYPE.equals('') and !KEYWORD.equals('')">
+            AND UPPER(${TYPE}) LIKE UPPER('%'||TRIM(#{KEYWORD})||'%')
+        </if>
+
+        ORDER BY PRO_IDX DESC)
+        WHERE RNUM BETWEEN #{START_ROW} AND #{END_ROW}
+
+    </select>
+
+
+    <select id="countProductRecord" resultType="int">
+
+        SELECT
+        COUNT(*)
+        FROM PRODUCT WHERE DEL = 'N'
+
+        <if test="TYPE != null and KEYWORD != null and !TYPE.equals('') and !KEYWORD.equals('')">
+            AND UPPER(${TYPE}) LIKE UPPER('%'||TRIM(#{KEYWORD})||'%')
+        </if>
+
+    </select>
+
+
+    <insert id="insertProduct" parameterType="hashmap"
+            useGeneratedKeys="true" keyProperty="PRO_IDX">
+        <selectKey keyProperty="PRO_IDX" resultType="string"
+                   order="BEFORE">
+
+            SELECT PRO_SEQ.NEXTVAL FROM DUAL
+
+        </selectKey>
+
+        INSERT INTO PRODUCT
+
+        (
+        PRO_IDX,
+        PRO_GROUP,
+        NAME,
+        CATEGORY,
+        STOCK,
+        PRICE,
+        MAIN_IMG,
+        ORIGINAL_NAME
+        )
+
+        VALUES
+
+        (
+        #{PRO_IDX},
+        #{PRO_GROUP},
+        #{NAME},
+        #{CATEGORY},
+        #{STOCK},
+        #{PRICE},
+        #{MAIN_IMG},
+        #{ORIGINAL_NAME}
+
+        )
+
+    </insert>
+
+
+    <insert id="insertDetail" parameterType="hashmap">
+
+        INSERT INTO DETAIL
+
+        (
+         PRO_IDX,
+         DETAIL1,
+         DETAIL2,
+         DETAIL3,
+         DETAIL4
+         )
+        VALUES
+       (
+        #{PRO_IDX},
+        #{DETAIL1},
+        #{DETAIL2},
+        #{DETAIL3},
+        #{DETAIL4}
+        )
+
+    </insert>
+
+
+    <insert id="insertSubImage" parameterType="hashmap">
+
+        INSERT INTO IMAGE
+
+        (
+         IMG_IDX,
+         PRO_IDX,
+         STORED_NAME,
+         STEP,
+         ORIGINAL_NAME)
+        VALUES
+        (
+        IMAGE_SEQ.NEXTVAL,
+        #{PRO_IDX},
+        #{STORED_NAME},
+        #{STEP},
+        #{ORIGINAL_NAME}
+        )
+
+    </insert>
+
+
+    <select id="selectProductDetail" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT PRO_IDX,
+               PRO_GROUP,
+               NAME,
+               CATEGORY,
+               STOCK,
+               PRICE,
+               MAIN_IMG,
+               ORIGINAL_NAME
+        FROM PRODUCT
+        WHERE PRO_IDX = #{PRO_IDX}
+          AND DEL = 'N'
+
+    </select>
+
+
+    <select id="selectStuffDetail" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT DETAIL1,
+               DETAIL2,
+               DETAIL3,
+               DETAIL4
+        FROM DETAIL
+        WHERE PRO_IDX = #{PRO_IDX}
+
+    </select>
+
+
+    <select id="selectSubImageList" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT IMG_IDX,
+               PRO_IDX,
+               STORED_NAME,
+               STEP,
+               ORIGINAL_NAME
+        FROM IMAGE
+        WHERE PRO_IDX = #{PRO_IDX}
+          AND DEL = 'N'
+        ORDER BY STEP ASC
+
+    </select>
+
+
+    <update id="deleteProduct" parameterType="hashmap">
+
+        UPDATE
+            PRODUCT
+        SET DEL = 'Y'
+        WHERE PRO_IDX = #{PRO_IDX}
+
+    </update>
+
+
+    <update id="updateProduct" parameterType="hashmap">
+
+        UPDATE PRODUCT
+        SET PRO_GROUP     = #{PRO_GROUP},
+            NAME          = #{NAME},
+            CATEGORY      = #{CATEGORY},
+            STOCK         = #{STOCK},
+            PRICE         = #{PRICE},
+            MAIN_IMG      = #{MAIN_IMG},
+            ORIGINAL_NAME = #{ORIGINAL_NAME}
+        WHERE PRO_IDX = #{PRO_IDX}
+
+    </update>
+
+
+    <update id="updateProductDetail" parameterType="hashmap">
+
+        UPDATE DETAIL
+        SET DETAIL1 = #{DETAIL1},
+            DETAIL2 = #{DETAIL2},
+            DETAIL3 = #{DETAIL3},
+            DETAIL4 = #{DETAIL4}
+        WHERE PRO_IDX = #{PRO_IDX}
+
+    </update>
+
+
+    <update id="deleteImageList" parameterType="hashmap">
+
+        UPDATE IMAGE
+        SET DEL = 'Y'
+        WHERE PRO_IDX = #{PRO_IDX}
+
+    </update>
+
+
+    <update id="updateImageList" parameterType="hashmap">
+
+        UPDATE IMAGE
+        SET DEL  = 'N',
+            STEP = #{STEP}
+        WHERE IMG_IDX = #{IMG_IDX}
+
+    </update>
+
+
+    <select id="selectProductInfo" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT *
+        FROM PRO_ORDER
+        WHERE ORDER_IDX = #{ORDER_IDX}
+
+    </select>
+
+    
+    <select id="checkCoupon" parameterType="hashmap" resultType="hashmap">
+
+        SELECT MEM_ID,
+               CP_IDX
+        FROM ORDER_INFO
+        WHERE ORDER_IDX = #{ORDER_IDX}
+
+    </select>
+
+</mapper>

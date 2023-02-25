@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="coupon">
+
+    <select id="selectCouponList" resultType="hashmap">
+
+<![CDATA[
+        SELECT CP_INFO_IDX,
+               CP_NAME,
+               CP_DISCOUNT,
+               TO_CHAR(START_DATE, 'YYYY-MM-DD') AS START_DATE,
+               TO_CHAR(END_DATE, 'YYYY-MM-DD')   AS END_DATE
+        FROM COUPON_INFO
+        WHERE END_DATE >= TRUNC(SYSDATE, 'DD')
+        ORDER BY CP_INFO_IDX DESC
+        ]]>
+
+    </select>
+
+
+    <insert id="downloadCoupon" parameterType="hashmap">
+
+        INSERT INTO MEMBER_CP
+            (
+             CP_IDX,
+             MEM_ID
+             )
+        VALUES
+            (
+             #{CP_IDX},
+             #{MEM_ID}
+             )
+
+    </insert>
+
+
+    <insert id="insertCoupon" parameterType="hashmap">
+
+        INSERT INTO COUPON_INFO
+        (
+         CP_INFO_IDX,
+         CP_NAME,
+         CP_DISCOUNT,
+         START_DATE,
+         END_DATE)
+        VALUES
+            (
+             COUPON_INFO_SEQ.NEXTVAL,
+             #{CP_NAME},
+             #{CP_DISCOUNT},
+             TO_DATE(#{START_DATE}, 'YYYY/MM/DD'),
+             TO_DATE(#{END_DATE}, 'YYYY/MM/DD')
+             )
+
+    </insert>
+
+
+    <select id="selectCouponDetail" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT CP_INFO_IDX,
+               CP_NAME,
+               CP_DISCOUNT,
+               TO_CHAR(START_DATE, 'YYYY-MM-DD') AS START_DATE,
+               TO_CHAR(END_DATE, 'YYYY-MM-DD')   AS END_DATE
+        FROM COUPON_INFO
+        WHERE CP_INFO_IDX = #{CP_INFO_IDX}
+
+    </select>
+
+
+    <update id="updateCoupon" parameterType="hashmap">
+
+        UPDATE COUPON_INFO
+        SET   CP_NAME     = #{CP_NAME},
+              CP_DISCOUNT = #{CP_DISCOUNT},
+              START_DATE  = TO_DATE(#{START_DATE}, 'YYYY/MM/DD'),
+              END_DATE    = TO_DATE(#{END_DATE}, 'YYYY/MM/DD')
+        WHERE CP_INFO_IDX = #{CP_INFO_IDX}
+
+    </update>
+
+
+    <delete id="deleteCoupon" parameterType="hashmap">
+
+        DELETE
+        COUPON_INFO
+        WHERE CP_INFO_IDX = #{CP_INFO_IDX}
+
+    </delete>
+
+
+    <!--이미 다운 받아서 사용했던 쿠폰도 발급 X  -->
+    <select id="checkCoupon" parameterType="hashmap" resultType="int">
+
+        SELECT COUNT(*)
+        FROM MEMBER_CP
+        WHERE MEM_ID = #{MEM_ID}
+          AND CP_IDX = #{CP_IDX}
+
+    </select>
+
+</mapper>

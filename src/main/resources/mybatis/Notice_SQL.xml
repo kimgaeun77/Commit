@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="notice">
+
+
+    <select id="selectFileInfo" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT STORED_NAME,
+               ORIGINAL_NAME
+        FROM NOTICE_FILE
+        WHERE FILE_IDX = #{FILE_IDX}
+
+    </select>
+
+
+    <update id="deleteFileList" parameterType="hashmap">
+
+        UPDATE NOTICE_FILE
+        SET DEL = 'Y'
+        WHERE NOTICE_IDX = #{NOTICE_IDX}
+
+    </update>
+
+
+    <update id="updateFile" parameterType="hashmap">
+
+        UPDATE NOTICE_FILE
+        SET DEL = 'N'
+        WHERE FILE_IDX = #{FILE_IDX}
+
+    </update>
+
+
+    <select id="selectFileList" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT FILE_IDX,
+               ORIGINAL_NAME,
+               ROUND(FILE_SIZE / 1024, 1) AS FILE_SIZE
+        FROM NOTICE_FILE
+        WHERE NOTICE_IDX = #{NOTICE_IDX}
+          AND DEL = 'N'
+
+    </select>
+
+
+    <insert id="insertFile" parameterType="hashmap">
+
+        INSERT INTO NOTICE_FILE
+        (
+         FILE_IDX,
+         NOTICE_IDX,
+         ORIGINAL_NAME,
+         STORED_NAME,
+         FILE_SIZE
+         )
+        VALUES
+        (
+         FILE_SEQ.NEXTVAL,
+         #{NOTICE_IDX},
+         #{ORIGINAL_NAME},
+         #{STORED_NAME},
+         #{FILE_SIZE}
+         )
+
+    </insert>
+
+
+    <insert id="insertComment" parameterType="hashmap">
+
+        INSERT INTO COMMENTS
+        (
+         COM_IDX,
+         NOTICE_IDX,
+         MEM_ID,
+         CONTENT
+         )
+        VALUES
+        (
+         COMMENTS_SEQ.NEXTVAL,
+         #{NOTICE_IDX},
+         #{MEM_ID},
+         #{CONTENT}
+         )
+
+    </insert>
+
+
+    <update id="deleteComment" parameterType="hashmap">
+
+        UPDATE COMMENTS
+        SET DEL = 'Y'
+        WHERE COM_IDX = #{COM_IDX}
+
+    </update>
+
+
+    <select id="selectNoticeList" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT *
+        FROM (SELECT ROW_NUMBER() OVER (ORDER BY NOTICE_IDX DESC) RNUM,
+                     NOTICE_IDX,
+                     TITLE,
+                     HIT,
+                     TO_CHAR(REG_DATE, 'YY/MM/DD') AS REG_DATE
+              FROM NOTICE
+              WHERE DEL = 'N')
+        WHERE RNUM BETWEEN #{START_ROW} AND #{END_ROW}
+
+    </select>
+
+
+    <select id="countRecord" parameterType="hashmap" resultType="int">
+
+        SELECT COUNT(*)
+        FROM NOTICE
+        WHERE DEL = 'N'
+
+    </select>
+
+
+    <select id="countCommentRecord" parameterType="hashmap" resultType="int">
+
+        SELECT COUNT(*)
+        FROM COMMENTS
+        WHERE NOTICE_IDX = #{NOTICE_IDX}
+          AND DEL = 'N'
+
+    </select>
+
+
+    <select id="selectCommentList" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT *
+        FROM (SELECT ROWNUM RUNM,
+                     COM_IDX,
+                     NOTICE_IDX,
+                     MEM_ID,
+                     CONTENT,
+                     TO_CHAR(REG_DATE, 'YYYY-MM-DD') AS REG_DATE
+              FROM COMMENTS
+              WHERE NOTICE_IDX = #{NOTICE_IDX}
+                AND DEL = 'N'
+              ORDER BY COM_IDX DESC)
+        WHERE RUNM BETWEEN #{START_ROW} AND #{END_ROW}
+
+    </select>
+
+
+    <insert id="insertNotice" parameterType="hashmap"
+            useGeneratedKeys="true" keyProperty="NOTICE_IDX">
+
+        <selectKey keyProperty="NOTICE_IDX" resultType="string"
+                   order="BEFORE">
+
+            SELECT NOTICE_SEQ.NEXTVAL FROM DUAL
+
+        </selectKey>
+
+        INSERT INTO NOTICE
+        (
+        NOTICE_IDX,
+        TITLE,
+        CONTENT
+        )
+        VALUES
+        (
+        #{NOTICE_IDX},
+        #{TITLE},
+        #{CONTENT}
+        )
+
+    </insert>
+
+
+    <update id="updateHitCount" parameterType="hashmap">
+
+        UPDATE NOTICE
+        SET HIT = NVL(HIT, 0) + 1
+        WHERE NOTICE_IDX = #{NOTICE_IDX}
+
+    </update>
+
+
+    <select id="selectNoticeDetail" parameterType="hashmap"
+            resultType="hashmap">
+
+        SELECT NOTICE_IDX,
+               TITLE,
+               CONTENT,
+               TO_CHAR(REG_DATE, 'YYYY-MM-DD') AS REG_DATE,
+               HIT,
+               DEL
+        FROM NOTICE
+        WHERE NOTICE_IDX = #{NOTICE_IDX}
+          AND DEL = 'N'
+
+    </select>
+
+
+    <update id="updateNotice" parameterType="hashmap">
+
+        UPDATE NOTICE
+        SET TITLE   = #{TITLE},
+            CONTENT = #{CONTENT}
+        WHERE NOTICE_IDX = #{NOTICE_IDX}
+
+    </update>
+
+
+    <update id="deleteNotice" parameterType="hashmap">
+
+        UPDATE NOTICE
+        SET DEL = 'Y'
+        WHERE NOTICE_IDX = #{NOTICE_IDX}
+
+    </update>
+
+</mapper>

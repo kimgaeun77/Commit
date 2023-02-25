@@ -1,0 +1,1727 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section { display: block; }
+
+body { line-height: 1; }
+
+ol,
+ul,
+li { list-style: none; }
+
+blockquote,
+q { quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after { content: ''; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+a { text-decoration: none; color: inherit; }
+
+* { box-sizing: border-box; }
+
+h1 { margin: 0; }
+
+a { text-decoration: none; color: inherit; }
+
+button,
+input,
+select,
+textarea { border: 0; background-color: transparent; resize: none; }
+button:focus,
+input:focus,
+select:focus,
+textarea:focus { outline: none; box-shadow: none; }
+
+a,
+button { cursor: pointer; }
+
+ul,
+ol { padding-left: 0; list-style: none; }
+
+body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; }
+
+html { margin: 0; padding: 0; }
+
+head { font-family: 'Noto Sans KR', sans-serif; }
+
+.sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+
+.pagination .page-control, .page-item a,
+.page-item button,
+.page-item span { display: inline-flex; align-items: center; justify-content: center; font-size: 16px; height: 26px; background-color: #fff; border-radius: 4px; }
+
+.pagination { display: flex; align-items: center; justify-content: center; }
+.pagination .page-control { border: 1px solid black; width: 26px; }
+.pagination .page-control.page-prev, .pagination .page-control.page-next { background: none; border: none; }
+.pagination .page-control.page-prev { margin-right: 24px; }
+.pagination .page-control.page-prev .bi-chevron-right { transform: rotate(-180deg); }
+.pagination .page-control.page-next { margin-left: 24px; }
+.pagination .page-control:hover { opacity: 0.4; }
+.pagination .page-control .bi-chevron-right { font-size: 18px; }
+
+.page-list { display: flex; align-items: center; justify-content: center; }
+
+.page-item { margin-right: 4px; }
+.page-item.is-active a,
+.page-item.is-active button,
+.page-item.is-active span { background-color: #3da5f5; color: #ffffff; cursor: pointer; }
+.page-item.is-active a:hover,
+.page-item.is-active button:hover,
+.page-item.is-active span:hover { color: #ffffff; }
+.page-item:last-child { margin-right: 0; }
+.page-item a,
+.page-item button,
+.page-item span { min-width: 26px; padding: 0 4px; cursor: pointer; }
+.page-item a:hover,
+.page-item button:hover,
+.page-item span:hover { color: #3da5f5; }
+
+.form-select,
+.form-input { font-size: 0.875rem; color: #3f4150; display: block; width: 100%; height: 40px; padding: 0 16px; background-color: #ffffff; border: 1px solid #e0e2e7; border-radius: 4px; appearance: none; transition: background-color 200ms ease-in-out; }
+.form-select::placeholder,
+.form-input::placeholder { color: #b2b3b9; }
+.form-select:not(:disabled):hover,
+.form-input:not(:disabled):hover { background-color: #f7f8fa; }
+.form-select:disabled,
+.form-input:disabled { cursor: not-allowed; opacity: 0.4; }
+
+.select-group { position: relative; }
+.select-group.is-active .form-select { border-color: #3da5f5; }
+.select-group.is-active .bi-caret-down-fill { color: #3da5f5; }
+.select-group .form-select { padding-right: 40px; text-overflow: ellipsis; outline: none; }
+.select-group .bi-caret-down-fill { position: absolute; top: 50%; right: 8px; transform: translateY(-50%); font-size: 1rem; color: #b2b3b9; pointer-events: none; }
+
+.input-group { position: relative; }
+.input-group .input-group-select { position: absolute; top: 50%; transform: translateY(-50%); left: 10px; color: #8c8d96; }
+.input-group .bi-search { position: absolute; top: 50%; transform: translateY(-50%); left: 10px; font-size: 20px; color: #8c8d96; }
+.input-group .form-input { padding-left: 40px; outline: none; }
+.input-group .form-input.select-input { padding-left: 100px; }
+
+.btn-primary, .btn-secondary, .btn-outlined, .btn-cart, .btn-ghost { display: inline-flex; align-items: center; justify-content: center; padding: 0 8px; font-weight: 700; border-radius: 4px; }
+.btn-primary:disabled, .btn-secondary:disabled, .btn-outlined:disabled, .btn-cart:disabled, .btn-ghost:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btn-primary { color: #ffffff; background-color: #3da5f5; transition: background-color 200ms ease-in-out; }
+.btn-primary:not(:disabled):hover { background-color: #3186c4; }
+
+.btn-secondary { color: #3f4150; background-color: #e0e2e7; transition: background-color 200ms ease-in-out; }
+.btn-secondary:not(:disabled):hover { background-color: #b2b3b9; }
+
+.btn-outlined { color: #3da5f5; background-color: #ffffff; border: 1px solid #3da5f5; transition: background-color 200ms ease-in-out; }
+.btn-outlined:not(:disabled):hover { background-color: #ecf6fe; }
+
+.btn-cart { color: #3f4150; background-color: #ffffff; border: 1px solid #e0e2e7; transition: background-color 200ms ease-in-out; }
+.btn-cart:not(:disabled):hover { background-color: #ecf6fe; }
+
+.btn-ghost { color: #3f4150; background-color: transparent; transition: color 200ms ease-in-out; }
+.btn-ghost:not(:disabled):hover { color: #8c8d96; }
+
+.btn-32 { font-size: 14px; height: 32px; }
+
+.btn-40 { font-size: 16px; height: 40px; }
+
+.btn-48 { font-size: 16px; height: 48px; }
+
+.btn-55 { font-size: 16px; height: 55px; }
+
+.btn-big { padding: 1.5rem; font-size: 2rem; font-weight: 500; height: 55px; }
+
+.header { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; right: 0; z-index: 3; width: 100%; padding: 0 25px; background-color: #000000; }
+
+.header__logo { width: auto; height: 50px; }
+
+.header__logo > a > img { width: 100%; height: 100%; }
+
+.header__navbar--items { display: flex; justify-content: flex-start; align-items: center; }
+
+.header__navbar--items > li > a { padding: 6px 20px; font-size: 17px; font-weight: 600; transition: all 0.3s ease-in-out; color: #ffffff; }
+
+.header__navbar--items > li > a:hover { color: #777; }
+
+.header__icons { display: flex; justify-content: center; align-items: center; }
+.header__icons li { position: relative; }
+.header__icons li .header-icon-drop { display: flex; justify-content: center; align-items: center; }
+.header__icons li .header-icon-drop i { z-index: -1; }
+.header__icons li .header-icon-drop,
+.header__icons li a { padding: 14px 15px; transition: all 0.3s ease-in-out; color: #ffffff; cursor: pointer; }
+.header__icons li .header-icon-drop:hover,
+.header__icons li a:hover { color: #777; }
+.header__icons li .icons-caret { z-index: -1; font-size: 0.75rem; margin-left: 4px; margin-top: 4px; }
+
+.header-dropdown { padding: 0; position: absolute; top: 40px; right: -20px; width: 140px; display: none; background-color: #ffffff; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+.header-dropdown ul { width: 100%; }
+.header-dropdown ul li a { padding: 0.5rem 0.5rem; display: flex; justify-content: flex-start; align-items: center; color: black; cursor: pointer; }
+.header-dropdown ul li a:hover { background-color: #ededed; }
+.header-dropdown ul li a i { margin-right: 10px; }
+.header-dropdown ul li a span { font-size: 0.75rem; }
+
+.show-dropdown { display: flex; align-items: center; }
+
+.pc { width: 100%; margin: 0 auto; position: relative; padding: 0 15px; }
+
+.pc__desc { position: relative; padding: 20px 0; width: 815px; margin: 0 auto; }
+
+.pc__title { font-size: 25px; font-weight: 600; color: #aaaaaa; padding: 20px 0; display: inline-block; }
+
+.pc__more { position: absolute; top: 40px; right: 20px; font-size: 0.75rem; color: #aaaaaa; cursor: pointer; }
+
+.pc__more:hover { color: #000; }
+
+.pc__items { display: flex; justify-content: flex-start; align-items: center; padding-bottom: 40px; max-width: 835px; margin: 0 auto; min-height: 150px }
+
+.pc__item { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 194px; height: 300px; padding: 8px; cursor: pointer; overflow: hidden; margin: 0 10px; }
+.pc__item a { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 194px; height: 300px; padding: 8px; cursor: pointer; overflow: hidden; margin: 0 10px; }
+
+.pc__item:hover { outline: 0.5px solid #aaaaaa; }
+
+.pc__item--image { width: 170px; height: 170px; }
+.pc__item--image img { width: 170px; height: 170px; }
+
+.circle { border: 2px solid #000000; border-radius: 50%; width: 30px; height: 30px; color: #000000; font-size: 20px; margin: 0px; padding: 1px; display: inline-block; display: flex; justify-content: center; align-items: center; margin-bottom: 5px; margin-top: 13px; }
+
+.pc__item--title { text-align: center; font-size: 1rem; letter-spacing: -1px; margin-bottom: 5px; height: 3rem; }
+
+.pc__item--sub { text-align: center; font-size: 1rem; margin-bottom: 10px; }
+
+.pc__item--price { color: #3da5f5; margin-bottom: 5px; }
+
+.pc__item--subprice { color: #f86d7d; }
+
+.carousel-wrapper { position: relative; overflow: hidden; }
+.carousel-wrapper .carousel-prev,
+.carousel-wrapper .carousel-next { color: #ffffff; position: absolute; top: 50%; transform: translateY(-50%); font-size: 1.25rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease-in-out; z-index: 30; }
+.carousel-wrapper .carousel-prev:hover,
+.carousel-wrapper .carousel-next:hover { color: #777; }
+.carousel-wrapper .carousel-prev { left: 20px; }
+.carousel-wrapper .carousel-next { right: 20px; }
+.carousel-wrapper .carousel__items { display: flex; justify-content: center; align-items: center; width: 300%; overflow: hidden; transform: translateX(0); transition: all 0.3s ease-in-out; }
+.carousel-wrapper .carousel__items .carousel__item { width: 100%; height: 452px; display: flex; justify-content: center; align-items: center; }
+.carousel-wrapper .carousel__item--image { width: auto; height: 100%; }
+
+.category { width: 100%; background-color: #141414; height: 15rem; }
+.category .category__items { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; position: relative; }
+.category .category__items .category-select { display: flex; justify-content: center; align-items: center; position: absolute; bottom: 0px; left: 50%; transform: translateX(-50%); width: 600px; height: 2rem; cursor: pointer; }
+.category .category__items .category-select .category-select__item { color: #ffffff; flex: 1; text-align: center; height: 100%; transition: all 0.2s ease; }
+.category .category__items .category-select .category-select__item.is-active { border-bottom: 4px solid #ffffff; }
+.category .category__items .category-select .category-select__item:hover { border-bottom: 4px solid #ffffff; }
+.category .category__items .category__item { display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 0 1.5rem; transition: all 0.3s ease-in-out; cursor: pointer; }
+.category .category__items .category__item:hover { color: #aaaaaa; }
+.category .category__items .category__item .category__item--icon { font-size: 6rem; }
+.category .category__items .category__item .category__item--title { font-size: 1.25rem; margin-top: 1rem; }
+
+.computer-form { width: 800px; margin: 0 auto; }
+
+.computer-form__wrapper { display: flex; justify-content: space-between; padding-top: 2rem; }
+
+.computer-list { margin: 2rem 0; }
+
+.pagination-wrapper { display: flex; justify-content: center; align-items: center; }
+.pagination-wrapper ul li { margin: 0 8px; }
+.pagination-wrapper ul li a { width: 2rem; height: 2rem; display: flex; justify-content: center; align-items: center; border-top-right-radius: 4px !important; border-top-left-radius: 4px !important; border-bottom-left-radius: 4px !important; border-bottom-right-radius: 4px !important; color: black; background-color: #ededed; }
+
+.computer-search { display: flex; }
+.computer-search button { background: #ffffff; border: 1px solid #e0e2e7; border-radius: 4px; color: #8c8d96; cursor: pointer; }
+.computer-search button:hover { background-color: #f7f8fa; }
+
+.product-wrapper { padding: 3rem 2rem; max-width: 1000px; margin: 0 auto; }
+.product-wrapper .product-detail__title { line-height: 35px; font-size: 1.75rem; font-weight: 700; }
+.product-wrapper .product-detail { display: flex; justify-content: center; align-items: center; }
+.product-wrapper .product-detail .product-detail__img { width: 50%; height: 480px; display: flex; justify-content: center; align-items: center; }
+.product-wrapper .product-detail .product-detail__img img { width: 100%; height: 100%; }
+.product-wrapper .product-detail .product-detail__desc { display: flex; flex-direction: column; justify-content: flex-start; margin-top: 0 3rem; width: 50%; padding: 3rem; }
+.product-wrapper .product-detail .product-detail__desc .product-price { padding: 2rem 0; }
+.product-wrapper .product-detail .product-detail__desc .product-price span { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); font-weight: 700; }
+.product-wrapper .product-detail .product-detail__desc .product-price .product-price__price { position: absolute; top: 50%; right: 2rem; transform: translateY(-50%); font-size: 2rem; color: #000; font-weight: 700; }
+.product-wrapper .product-detail .product-detail__desc .product-price,
+.product-wrapper .product-detail .product-detail__desc .product-as,
+.product-wrapper .product-detail .product-detail__desc .product-delivery { display: flex; align-items: center; width: 100%; position: relative; }
+.product-wrapper .product-detail .product-detail__desc .product-as,
+.product-wrapper .product-detail .product-detail__desc .product-delivery { padding: 2rem 0; }
+.product-wrapper .product-detail .product-detail__desc .product-as span,
+.product-wrapper .product-detail .product-detail__desc .product-delivery span { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); font-weight: 700; }
+.product-wrapper .product-detail .product-detail__desc .product-as h3,
+.product-wrapper .product-detail .product-detail__desc .product-delivery h3 { position: absolute; right: 2rem; top: 50%; transform: translateY(-50%); }
+.product-wrapper .product-detail .product-detail__desc .product-add { margin-top: 2rem; width: 100%; height: 100px; background-color: lightgrey; position: relative; }
+.product-wrapper .product-detail .product-detail__desc .product-add h2 { padding: 1rem; font-size: 1rem; }
+.product-wrapper .product-detail .product-detail__desc .product-add span { font-weight: 700; color: #000; position: absolute; right: 10px; bottom: 10px; font-size: 1.25rem; }
+.product-wrapper .product-detail .product-detail__desc .product-add .product-add__wrapper { display: flex; position: absolute; bottom: 10px; left: 10px; }
+.product-wrapper .product-detail .product-detail__desc .product-add .product-add__wrapper .product-add__button,
+.product-wrapper .product-detail .product-detail__desc .product-add .product-add__wrapper .product-quantity { display: flex; justify-content: center; align-items: center; width: 1.5rem; height: 1.5rem; background-color: #ffffff; border: 1px solid #e0e2e7; font-size: 0.875rem; text-align: center; }
+.product-wrapper .product-detail .product-detail__desc .product-add .product-add__wrapper .product-add__button { cursor: pointer; }
+.product-wrapper .product-detail .product-detail__desc .product-total { display: flex; justify-content: flex-end; align-items: center; padding: 2rem 0; }
+.product-wrapper .product-detail .product-detail__desc .product-total p { color: #8c8d96; margin-right: 30px; }
+.product-wrapper .product-detail .product-detail__desc .product-total h1 { color: #f86d7d; font-weight: 700; font-size: 2rem; }
+.product-wrapper .product-detail .product-detail__desc .product-button { display: flex; align-items: center; justify-content: center; }
+.product-wrapper .product-detail .product-detail__desc .product-button button { margin-right: 18px; font-size: 2rem; height: 3rem; }
+
+.product-info .product-info__tab { display: flex; justify-content: center; align-items: center; margin-top: 2rem; margin-bottom: 2rem; }
+.product-info .product-info__tab div { width: 200px; height: 80px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #8c8d96; position: relative; }
+.product-info .product-info__tab div h3 { font-size: 1.5rem; font-weight: 500; cursor: pointer; }
+.product-info .product-info__tab div p { position: absolute; top: 1rem; right: 20%; color: #f86d7d; font-weight: 700; }
+
+.product-add__wrapper { display: flex; }
+.product-add__wrapper .product-add__button,
+.product-add__wrapper .product-quantity { display: flex; justify-content: center; align-items: center; width: 1.5rem; height: 1.5rem; background-color: #ffffff; border: 1px solid #e0e2e7; font-size: 0.875rem; text-align: center; }
+.product-add__wrapper .product-add__button { cursor: pointer; }
+
+.product-info__footer-wrapper { width: 800px; margin: 0 auto; padding: 2rem 0; }
+.product-info__footer-wrapper .product-info__footer-image { margin-top: 2rem; width: 100%; }
+.product-info__footer-wrapper .product-info__footer-image img { width: 100%; height: auto; }
+.product-info__footer-wrapper .product-info__footer-review { width: 100%; }
+.product-info__footer-wrapper .product-info__footer-review .product-info__footer-review--title { margin-top: 2rem; width: 100%; display: inline-block; font-size: 2.5rem; text-align: center; padding: 1.5rem 0; font-weight: 700; border-radius: 8px; color: #ffffff; background-color: #000; }
+.product-info__footer-wrapper .product-info__footer-review .product-info__footer-review--item { padding: 1rem; border-bottom: 6px solid #e0e2e7; }
+.product-info__footer-wrapper .product-info__footer-review .product-info__footer-review--item .review--item__title { display: flex; font-weight: 500; font-size: 1.125rem; margin-bottom: 1rem; }
+.product-info__footer-wrapper .product-info__footer-review .product-info__footer-review--item .review--item__title span { margin: 0rem 0.5rem; }
+.product-info__footer-wrapper .product-info__footer-review .product-info__footer-review--item .review--item__main { height: 8rem; overflow-y: hidden; padding-right: 4rem; line-height: 2rem; position: relative; }
+.product-info__footer-wrapper .product-info__footer-review .product-info__footer-review--item .review--item__main h1 { font-size: 1.125rem; font-weight: 500; }
+.product-info__footer-wrapper .product-info__footer-review .product-info__footer-review--item .review--item__main .review--item__delete { position: absolute; right: 1.5rem; bottom: 0; font-size: 1.25rem; cursor: pointer; }
+.product-info__footer-wrapper .review-pagination { margin: 2rem 0; }
+.product-info__footer-wrapper .product-info__footer-qna { position: relative; }
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--title { margin-top: 2rem; width: 100%; display: inline-block; font-size: 2.5rem; text-align: center; padding: 1.5rem 0; font-weight: 700; border-radius: 8px; color: #ffffff; background-color: #000; }
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items { display: flex; padding: 1rem 0; border-bottom: 1px solid #8c8d96; position: relative; }
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .comment-arrow,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .comment-arrow,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .comment-arrow { position: absolute; left: 5px; }
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--header-item,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--main-item,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--comment-item,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--header-item,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--main-item,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--comment-item,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--header-item,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--main-item,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--comment-item { flex: 1; text-align: center; }
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--header-item i,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--main-item i,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--comment-item i,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--header-item i,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--main-item i,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--comment-item i,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--header-item i,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--main-item i,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--comment-item i { margin: 0.5rem; cursor: pointer; }
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--header-item:nth-child(3),
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--main-item:nth-child(3),
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--comment-item:nth-child(3),
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--header-item:nth-child(3),
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--main-item:nth-child(3),
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--comment-item:nth-child(3),
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--header-item:nth-child(3),
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--main-item:nth-child(3),
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--comment-item:nth-child(3) { flex: 2.5; }
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--header-item.qna-item__title,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--main-item.qna-item__title,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--header .product-info__footer-qna--comment-item.qna-item__title,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--header-item.qna-item__title,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--main-item.qna-item__title,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--main-items .product-info__footer-qna--comment-item.qna-item__title,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--header-item.qna-item__title,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--main-item.qna-item__title,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna--commnet-items .product-info__footer-qna--comment-item.qna-item__title { cursor: pointer; }
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna-main .product-info__footer-qna--main-content,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna-main .product-info__footer-qna--comment-content { display: none; height: 8rem; overflow-y: hidden; padding: 1rem 4rem; text-align: center; border-bottom: 1px solid #8c8d96; position: relative; }
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna-main .product-info__footer-qna--main-content.open,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna-main .product-info__footer-qna--comment-content.open { display: block; }
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna-main .product-info__footer-qna--main-content .qna-content-add,
+.product-info__footer-wrapper .product-info__footer-qna .product-info__footer-qna-main .product-info__footer-qna--comment-content .qna-content-add { position: absolute; bottom: 0.5rem; right: 0.5rem; height: 2rem; }
+.product-info__footer-wrapper .product-info__footer-qna-footer { position: relative; padding: 0.5rem; }
+.product-info__footer-wrapper .product-info__footer-qna-footer .product-info__add { position: absolute; right: 0.5rem; }
+.product-info__footer-wrapper .product-info__footer-qna-footer .product-info__add button { height: 2rem; }
+.product-info__footer-wrapper .product-info__footer-qna-footer .pagination { padding: 3rem 0; }
+
+.part-section { margin: 2rem 0; }
+.part-section .part-wrapper { padding-bottom: 2rem; max-width: 800px; margin: 0 auto; }
+.part-section .part-wrapper .part-items { display: flex; width: 100%; justify-content: flex-start; align-items: center; min-height: 100px; }
+.part-section .part-wrapper .part-items .part-item { border: 1px solid #e0e2e7; width: 33.3333%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem; height: 300px; }
+.part-section .part-wrapper .part-items .part-item .part-item__image { width: 170px; height: 170px; margin-bottom: 0.5rem; }
+.part-section .part-wrapper .part-items .part-item .part-item__image img { width: 170px; height: 170px; }
+.part-section .part-wrapper .part-items .part-item .part-item__info { text-align: center; height: 90px; margin-top: 0.5rem; }
+.part-section .part-wrapper .part-items .part-item .part-item__info p { font-size: 0.875rem; color: #8c8d96; margin-bottom: 0.5rem; }
+.part-section .part-wrapper .part-items .part-item .part-item__info h1 { color: #8c8d96; font-size: 0.875rem; margin-bottom: 0.7rem; height: 35px; display: flex; align-items: center; justify-content: center; }
+.part-section .part-wrapper .part-items .part-item .part-item__info span { font-size: 0.875rem; color: #3da5f5; }
+
+.login-section { height: 500px; min-height: 600px; }
+.login-section .login-wrapper { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.login-section .login-wrapper .login-title { font-size: 2rem; color: #8c8d96; margin-bottom: 1rem; }
+.login-section .login-wrapper .login-form { padding: 1rem; }
+.login-section .login-wrapper .login-form .login-form__search { display: flex; justify-content: flex-end; margin-bottom: 2rem; font-size: 0.875rem; color: #b2b3b9; }
+.login-section .login-wrapper .login-form .login-form__search span { margin: 0 0.5rem; }
+.login-section .login-wrapper .login-form .login-form__login,
+.login-section .login-wrapper .login-form .login-form__password { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.login-section .login-wrapper .login-form .login-form__login .login-form__input,
+.login-section .login-wrapper .login-form .login-form__password .login-form__input { margin-left: 1.5rem; width: 200px; height: 2rem; }
+.login-section .login-wrapper .login-form .login-form__buttons { display: flex; flex-direction: column; justify-content: center; }
+.login-section .login-wrapper .login-form .login-form__buttons button { font-size: 1.25rem; font-weight: 400; padding: 0.5rem 0; margin-bottom: 1rem; }
+.login-section .login-wrapper .login-form .login-form__buttons button a { width: 100%; height: 100%; }
+
+.search-id__wrapper,
+.search-pw__wrapper { width: 600px; margin: 0 auto; padding: 2rem 0; }
+.search-id__wrapper .search-id__title,
+.search-id__wrapper .search-pw__title,
+.search-pw__wrapper .search-id__title,
+.search-pw__wrapper .search-pw__title { font-size: 1.75rem; text-align: center; font-weight: 700; margin-bottom: 2rem; }
+.search-id__wrapper form .search-id__id,
+.search-id__wrapper form .search-id__number,
+.search-id__wrapper form .search-pw__id,
+.search-id__wrapper form .search-pw__email,
+.search-pw__wrapper form .search-id__id,
+.search-pw__wrapper form .search-id__number,
+.search-pw__wrapper form .search-pw__id,
+.search-pw__wrapper form .search-pw__email { display: flex; justify-content: center; align-items: center; margin-bottom: 1rem; }
+.search-id__wrapper form .search-id__id label,
+.search-id__wrapper form .search-id__number label,
+.search-id__wrapper form .search-pw__id label,
+.search-id__wrapper form .search-pw__email label,
+.search-pw__wrapper form .search-id__id label,
+.search-pw__wrapper form .search-id__number label,
+.search-pw__wrapper form .search-pw__id label,
+.search-pw__wrapper form .search-pw__email label { display: inline; margin-right: 1rem; width: 80px; }
+.search-id__wrapper form .search-id__id .form-input,
+.search-id__wrapper form .search-id__number .form-input,
+.search-id__wrapper form .search-pw__id .form-input,
+.search-id__wrapper form .search-pw__email .form-input,
+.search-pw__wrapper form .search-id__id .form-input,
+.search-pw__wrapper form .search-id__number .form-input,
+.search-pw__wrapper form .search-pw__id .form-input,
+.search-pw__wrapper form .search-pw__email .form-input { display: inline; width: 200px; height: 2rem; }
+.search-id__wrapper form .search-id__button--wrapper,
+.search-id__wrapper form .search-pw__button--wrapper,
+.search-pw__wrapper form .search-id__button--wrapper,
+.search-pw__wrapper form .search-pw__button--wrapper { display: flex; justify-content: center; margin-top: 1rem; }
+.search-id__wrapper form .search-id__button--wrapper .search-id__button,
+.search-id__wrapper form .search-id__button--wrapper .search-pw__button,
+.search-id__wrapper form .search-pw__button--wrapper .search-id__button,
+.search-id__wrapper form .search-pw__button--wrapper .search-pw__button,
+.search-pw__wrapper form .search-id__button--wrapper .search-id__button,
+.search-pw__wrapper form .search-id__button--wrapper .search-pw__button,
+.search-pw__wrapper form .search-pw__button--wrapper .search-id__button,
+.search-pw__wrapper form .search-pw__button--wrapper .search-pw__button { margin: 0 auto; height: 2rem; }
+
+.email-check { right: -14rem !important; }
+
+.signup-section { margin-top: 2rem; margin: 2rem auto; }
+.signup-section .signup-wrapper { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.signup-section .signup-wrapper .signup__title { font-size: 2rem; text-align: center; color: #8c8d96; padding-bottom: 1rem; }
+.signup-section .signup-wrapper .signup-form { display: flex; justify-content: space-between; align-items: center; position: relative; padding: 1rem 0; }
+.signup-section .signup-wrapper .signup-form label,
+.signup-section .signup-wrapper .signup-form .radio-label { position: relative; }
+.signup-section .signup-wrapper .signup-form label span,
+.signup-section .signup-wrapper .signup-form .radio-label span { position: absolute; top: 50%; right: -0.7rem; transform: translateY(-50%); color: #f86d7d; }
+.signup-section .signup-wrapper .signup-form input { margin-left: 1rem; width: 300px; height: 2rem; }
+.signup-section .signup-wrapper .signup-form button { position: absolute; right: -5rem; padding: 0.5rem 0.5rem; }
+.signup-section .signup-wrapper .signup-form .warning-message { position: absolute; left: 0; bottom: 0; font-size: 0.75rem; color: #f86d7d; display: none; }
+.signup-section .signup-wrapper .signup-form .warning-message.warning { display: block; }
+.signup-section .signup__button { display: flex; justify-content: center; margin-top: 1rem; }
+.signup-section .signup__button button { width: auto; padding: 0.5rem 2rem; margin-left: 1rem; }
+.signup-section .adress__detail--wrapper { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
+.signup-section .adress__detail--wrapper .adress__detail__number { margin-right: 10px; }
+.signup-section .adress__detail--wrapper input { width: 300px; height: 2rem; }
+.signup-section .signup-form__email .sign-up__email--wrapper { display: flex; justify-content: center; align-items: center; }
+.signup-section .signup-form__email .sign-up__email--wrapper .sign-up__input--email { width: 140px; margin-left: 0; }
+.signup-section .signup-form__email .sign-up__email--wrapper .email-direct { width: 126px; margin-left: 0; }
+.signup-section .signup-form__email .sign-up__email--wrapper .email-select__wrapper { position: absolute; right: -140px; }
+.signup-section .signup-form__email .sign-up__email--wrapper .email-select__wrapper select { height: 2rem; }
+.signup-section .signup-form__email .sign-up__email--wrapper span { margin: 0 10px; }
+
+.signup-form__radio .radio-wrapper { display: flex; justify-content: center; align-items: center; margin-right: 100px; }
+.signup-form__radio .radio-wrapper .radio-wrapper-label { display: flex; justify-content: center; align-items: center; }
+.signup-form__radio .radio-wrapper .radio-wrapper-label input { width: 20px !important; margin-right: 10px; }
+
+.sign-up__adress--wrapper { width: 316.13px; display: flex; position: relative; justify-content: flex-start; }
+.sign-up__adress--wrapper .sign-up__adress__zipcode { width: 150px !important; }
+.sign-up__adress--wrapper .sign-up__button { position: absolute; left: 180px; right: auto !important; }
+
+.resive__id { font-size: 1rem; }
+
+.event-page { max-width: 900px; margin: 0 auto; min-height: 600px }
+.event-page .event-page__wrapper { padding: 2rem 0; }
+.event-page .event-page__wrapper .event-page__title { font-size: 2.25rem; font-weight: 700; text-align: center; margin-bottom: 2rem; }
+.event-page .event-page__wrapper .event-page__container { display: flex; flex-wrap: wrap; }
+.event-page .event-page__wrapper .event-page__container .event-page__item { width: 50%; height: 300px; border: 1px solid #e0e2e7; padding: 2rem 1rem; }
+.event-page .event-page__wrapper .event-page__container .event-page__item .event-page__item--wrapper .event-page__item--coupon { display: flex; justify-content: center; }
+.event-page .event-page__wrapper .event-page__container .event-page__item .event-page__item--wrapper .event-page__item--coupon img { width: 170px; height: 180px; }
+.event-page .event-page__wrapper .event-page__container .event-page__item .event-page__item--wrapper .event-page__item--coupon .event-page__item--info { display: flex; flex-direction: column; justify-content: space-between; width: 230px; padding: 1rem; background-color: #f7f8fa; }
+.event-page .event-page__wrapper .event-page__container .event-page__item .event-page__item--wrapper .event-page__item--coupon .event-page__item--info .info__top h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
+.event-page .event-page__wrapper .event-page__container .event-page__item .event-page__item--wrapper .event-page__item--coupon .event-page__item--info .info__bottom h3 { margin-bottom: 0.75rem; }
+.event-page .event-page__wrapper .event-page__container .event-page__item .event-page__item--wrapper .event-page__item--coupon .event-page__item--info .info__bottom p { color: #8c8d96; font-size: 0.875rem; }
+.event-page .event-page__wrapper .event-page__container .event-page__item .event-page__item--wrapper .event-page__item-button { margin-top: 1.5rem; display: flex; justify-content: center; align-items: center; }
+.event-page .event-page__wrapper .event-page__container .event-page__item .event-page__item--wrapper .event-page__item-button button { font-size: 1.125rem; width: 70%; height: 1.75rem; border-radius: 12px; }
+.event-page .event-page__wrapper .event-page__container .event-page__item .event-page__item--wrapper .event-page__item-button button i { margin-left: 10px; }
+
+.basket-section { max-width: 800px; margin: 0 auto; padding: 2rem 0; min-height: 600px; }
+.basket-section .basket-wrapper { width: 100%; }
+.basket-section .basket-wrapper .basket-title { font-size: 2rem; text-align: center; color: #8c8d96; padding-bottom: 1rem; }
+.basket-section .basket-wrapper .basket-container { margin-top: 1rem; }
+.basket-section .basket-wrapper .basket-container .basket-header { display: flex; height: 4rem; background: #000; color: #ffffff; justify-content: center; align-items: center; }
+.basket-section .basket-wrapper .basket-container .basket-header .basket-header__item { flex: 1 1 0; text-align: center; }
+.basket-section .basket-wrapper .basket-container .basket-header .basket-header__item:nth-child(1) { flex: 4 0 0; }
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper { display: flex; height: 6rem; justify-content: center; align-items: center; border-bottom: 1px solid #8c8d96; }
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper .basket-container__item { flex: 1 0 0; display: flex; justify-content: center; align-items: center; position: relative; height: 100%; }
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper .basket-container__item button { font-size: 1rem; }
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper .basket-container__item .product-add__wrapper { display: flex; }
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper .basket-container__item .product-add__wrapper .product-add__button,
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper .basket-container__item .product-add__wrapper .product-quantity { display: flex; justify-content: center; align-items: center; width: 1.25rem; height: 1.25rem; background-color: #ffffff; border: 1px solid #e0e2e7; font-size: 0.875rem; }
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper .basket-container__item .product-add__wrapper .product-add__button { cursor: pointer; }
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper .basket-container__item::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 70%; background-color: #8c8d96; }
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper .basket-container__item:nth-child(1) { flex: 4 0 0; display: flex; justify-content: flex-start; }
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper .basket-container__item:nth-child(1)::before { content: none; }
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper .basket-container__item:nth-child(1) img { margin: 1rem; width: 4rem; height: 4rem; }
+.basket-section .basket-wrapper .basket-container .basket-container__item-wrapper .basket-container__item:nth-child(1) span { white-space: wrap; }
+.basket-section .basket-wrapper .basket-container .basket-footer { display: flex; height: 7rem; justify-content: center; align-items: center; border-bottom: 1px solid #8c8d96; }
+.basket-section .basket-wrapper .basket-container .basket-footer .basket-footer__item { display: flex; justify-content: center; align-items: center; flex: 1; padding: 1rem; font-weight: 700; font-size: 2rem; }
+.basket-section .basket-wrapper .basket-container .basket-footer .basket-footer__item button { width: 100px; height: 40px; margin-left: 1rem; }
+.basket-section .basket-wrapper .basket-container .basket-remove-all { display: flex; justify-content: end; margin-top: 1rem; margin-right: 1rem; height: 1.5rem; }
+
+.notice-section { position: relative; max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+.notice-section .notice-title { font-size: 2rem; color: #8c8d96; text-align: center; }
+.notice-section .notice-board { margin-top: 2rem; width: 100%; }
+.notice-section .notice-board .notice-board__header { display: flex; justify-content: center; align-items: center; height: 4rem; background-color: #000; color: #ffffff; }
+.notice-section .notice-board .notice-board__header .notice-board__header--item { flex: 1; display: flex; justify-content: center; align-items: center; }
+.notice-section .notice-board .notice-board__header .notice-board__header--item:nth-child(2) { flex: 3; }
+.notice-section .notice-board .notice-board__main-wrapper { height: 30rem; overflow-y: hidden; }
+.notice-section .notice-board .notice-board__main-wrapper .notice-board__main-items { display: flex; justify-content: center; align-items: center; height: 3rem; border-bottom: 1px solid #8c8d96; }
+.notice-section .notice-board .notice-board__main-wrapper .notice-board__main-items .notice-board__main-item { flex: 1; display: flex; justify-content: center; align-items: center; }
+.notice-section .notice-board .notice-board__main-wrapper .notice-board__main-items .notice-board__main-item:nth-child(2) { flex: 3; }
+.notice-section .pagination { margin-top: 2rem; }
+.notice-section .notice-write__button { position: absolute; right: 0px; bottom: 3rem; }
+
+.notice-detail__section { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+.notice-detail__section .notice-detail__post { height: 600px; }
+.notice-detail__section .notice-detail__post .post__header { background-color: #141414; height: 13%; width: 100%; color: #ffffff; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between; }
+.notice-detail__section .notice-detail__post .post__header h1 { font-weight: 700; font-size: 1.25rem; }
+.notice-detail__section .notice-detail__post .post__header div { display: flex; justify-content: space-between; }
+.notice-detail__section .notice-detail__post .post__header div span { font-size: 0.75rem; }
+.notice-detail__section .notice-detail__post .post__main { display: flex; flex-direction: column; border: 1px solid #141414; width: 100%; height: 72%;}
+.notice-detail__section .notice-detail__post .post__main .post__main--text { width: 100%; height: 75%; padding: 1rem; border-bottom: 1px solid #141414; line-height: 2; overflow-y: scroll; }
+.notice-detail__section .notice-detail__post .post__main .post__main--file { height: 25%; padding: 1rem; font-size: 0.75rem; color: #8c8d96; height: auto; }
+.notice-detail__section .notice-detail__post .post__main .post__main--file h3 { margin-bottom: 1rem; }
+.notice-detail__section .notice-detail__post .post__main .post__main--file a { text-decoration: underline; margin: 0.5rem 0; display: block; }
+.notice-detail__section .notice-detail__post .post__buttons { display: flex; justify-content: flex-end; align-items: center; height: 15%; }
+.notice-detail__section .notice-detail__post .post__buttons button { margin-left: 1rem; font-size: 1rem; height: 2rem; width: 6rem; }
+.notice-detail__section .notice-detail__comments { width: 100%; }
+.notice-detail__section .notice-detail__comments .comment__title { font-size: 1.25rem; font-weight: 500; display: block; padding-bottom: 1rem; border-bottom: 4px solid #b2b3b9; }
+.notice-detail__section .notice-detail__comments .comment__items--wrapper { height: auto; overflow: hidden; margin-bottom: 2rem; }
+.notice-detail__section .notice-detail__comments .comment__items--wrapper .comment__items { display: flex; justify-content: center; align-items: center; height: 3rem; padding: 1rem; border-bottom: 1px solid #8c8d96; }
+.notice-detail__section .notice-detail__comments .comment__items--wrapper .comment__items .comment__item--wrapper { display: flex; justify-content: flex-end; font-size: 0.875rem; color: #8c8d96; }
+.notice-detail__section .notice-detail__comments .comment__items--wrapper .comment__items .comment__item--wrapper i { margin-left: 1rem; font-size: 1rem; cursor: pointer; }
+.notice-detail__section .notice-detail__comments .comment__items--wrapper .comment__item { flex: 1; }
+.notice-detail__section .notice-detail__comments .comment__items--wrapper .comment__item:nth-child(2) { flex: 2; }
+.notice-detail__section .notice-comment__form { width: 100%; height: 200px; padding: 1rem; border: 1px solid #e0e2e7; position: relative; display: flex; align-items: center; margin-bottom: 2rem; }
+.notice-detail__section .notice-comment__form .comment__form-input { width: 100%; height: 80%; padding: 0.5rem 0; resize: none; }
+.notice-detail__section .notice-comment__form .notice-comment__nickname { position: absolute; top: 10px; left: 1rem; }
+.notice-detail__section .notice-comment__form button { position: absolute; right: 1rem; bottom: 15px; width: 3rem; height: 1.5rem; }
+
+.notice-write__section { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+.notice-write__section .notice-write__form .notice-write__form--header { background-color: #000; height: 5rem; display: flex; align-items: center; justify-content: flex-start; }
+.notice-write__section .notice-write__form .notice-write__form--header .notice-write__form--header-input { width: 300px; height: 3rem; margin-left: 2rem; }
+.notice-write__section .notice-write__form .notice-write__form--main { width: 100%; height: 400px; border: 1px solid #8c8d96; }
+.notice-write__section .notice-write__form .notice-write__form--main .notice-write__form--main-input { width: 100%; height: 100%; border: none; resize: none; padding: 1rem; font-size: 1rem; }
+.notice-write__section .notice-write__form .notice-write__form--footer { width: 100%; border: 1px solid #8c8d96; display: flex; justify-content: space-between; flex-direction: column; padding: 0.5rem; }
+.notice-write__section .notice-write__form .notice-write__form--footer input { padding: 0.5rem 0; }
+.notice-write__section .notice-write__form .notice-write__form--footer .notice-write__form--footer-title { font-size: 0.875rem; }
+.notice-write__section .notice-write__form .notice-write__form--footer .notice-file { display: flex; justify-content: flex-start; align-items: center; }
+.notice-write__section .notice-write__form .notice-write__form--footer .notice-file span { width: 200px; height: auto; }
+.notice-write__section .notice-write__form .notice-write__form--footer .notice-file input { width: 200px; }
+.notice-write__section .notice-write__form .notice-write__form--button-wrapper { width: 100%; height: 4rem; display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+.notice-write__section .notice-write__form .notice-write__form--button-wrapper button { width: 5rem; height: 2rem; }
+
+.order-modal-box,
+.my-order-modal-box { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 100; }
+.order-modal-box.open,
+.my-order-modal-box.open { display: block; }
+
+.order-list__section { max-width: 1400px; margin: 0 auto; padding: 1rem; position: relative; }
+.order-list__section .pagination { margin-top: 2rem; }
+.order-list__section .order-list__title { font-size: 2rem; color: #8c8d96; text-align: center; margin: 2rem 0; }
+.order-list__section .order-list__wrapper { display: flex; height: 500px; justify-content: flex-start; align-items: flex-start; }
+.order-list__section .order-list__wrapper .order-list__menu { display: flex; flex-direction: column; width: 18%; }
+.order-list__section .order-list__wrapper .order-list__menu .order-list__item { margin-top: 1rem; }
+.order-list__section .order-list__wrapper .order-list__menu .order-list__item h1 { border-radius: 8px; background-color: black; color: white; padding: 0.5rem 10px; }
+.order-list__section .order-list__wrapper .order-list__menu .order-list__item ul li { margin-top: 0.5rem; font-size: 0.875rem; transition: all 0.3 ease-in-out; }
+.order-list__section .order-list__wrapper .order-list__menu .order-list__item ul li:hover { color: #8c8d96; }
+.order-list__section .order-list__wrapper .order-list__menu .order-list__header { width: 100%; height: 3rem; background-color: black; color: white; display: flex; align-items: center; border-radius: 8px; }
+.order-list__section .order-list__wrapper .order-list__menu .order-list__header h1 { padding-left: 10px; }
+.order-list__section .order-list__wrapper .order-list__main,
+.order-list__section .order-list__wrapper .coupon-list { margin-left: 2rem; width: 82%; }
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main { display: flex; justify-content: center; align-items: center; border-top: 1px solid #8c8d96; border-bottom: 1px solid #8c8d96; height: 2rem; }
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__main--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .coupon-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .coupon-list__main--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__main--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .coupon-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .coupon-list__main--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__main--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .coupon-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .coupon-list__main--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__main--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .coupon-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .coupon-list__main--item,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__main--item,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .coupon-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .coupon-list__main--item,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__main--item,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .coupon-list__header--item,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .coupon-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .coupon-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .coupon-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .coupon-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .coupon-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .coupon-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .coupon-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .coupon-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .coupon-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .coupon-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .coupon-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__main--item,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .coupon-list__header--item,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .coupon-list__main--item { flex: 1; text-align: center; }
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__main--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .coupon-list__main--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__main--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .coupon-list__main--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__main--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .coupon-list__main--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__main--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .coupon-list__main--item.price,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__main--item.price,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .coupon-list__main--item.price,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__main--item.price,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .coupon-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .coupon-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .coupon-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .coupon-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .coupon-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .coupon-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__main--item.price,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .coupon-list__header--item.price,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .coupon-list__main--item.price { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__main--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .coupon-list__main--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__main--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .coupon-list__main--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__main--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .coupon-list__main--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__main--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .coupon-list__main--item button,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__main--item button,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .coupon-list__main--item button,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__main--item button,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .coupon-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .coupon-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .coupon-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .coupon-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .coupon-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .coupon-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__main--item button,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .coupon-list__header--item button,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .coupon-list__main--item button { font-size: 1.25rem; }
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__main--select,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__main--select,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__main--select,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__main--select,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__main--select,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__main--select,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__main--select,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__main--select,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__main--select,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__main--select,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__main--select,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__main--select { padding: 5px 5px; border: 1px solid #e0e2e7; }
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .coupon-list__main--item:nth-child(2),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .coupon-list__main--item:nth-child(2),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .coupon-list__main--item:nth-child(2),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .coupon-list__main--item:nth-child(2),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .coupon-list__main--item:nth-child(2),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .coupon-list__main--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .coupon-list__main--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .coupon-list__main--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .coupon-list__main--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .coupon-list__main--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .coupon-list__main--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__header--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__header--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__header--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__main--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__main--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__main--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__pro--item:nth-child(3),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__pro--item:nth-child(4),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__pro--item:nth-child(5),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .coupon-list__header--item:nth-child(2),
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .coupon-list__main--item:nth-child(2) { flex: 1.5; }
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--header .coupon-list__main--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--header .coupon-list__main--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main .coupon-list__main--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main .coupon-list__main--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__header .coupon-list__main--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main .coupon-list__main--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--header .coupon-list__main--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--header .coupon-list__main--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main .coupon-list__main--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main .coupon-list__main--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__header .coupon-list__main--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__header--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__header--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__header--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__main--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__main--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__main--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__pro--item:nth-child(3).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__pro--item:nth-child(4).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .order-list__pro--item:nth-child(5).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .coupon-list__header--item:nth-child(2).pro,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main .coupon-list__main--item:nth-child(2).pro { flex: 4; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.order-list__section .order-list__wrapper .order-list__main .order-list__main--main,
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--main,
+.order-list__section .order-list__wrapper .coupon-list .order-list__main--main,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--main { height: 3rem; }
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main { height: 2.5rem; }
+.order-list__section .order-list__wrapper .order-list__main .coupon-list__main--item-delete,
+.order-list__section .order-list__wrapper .coupon-list .coupon-list__main--item-delete { cursor: pointer; }
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--item,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--item { flex: 1; text-align: center; }
+.order-list__section .order-list__wrapper .order-list__main .order-list__pro--item img,
+.order-list__section .order-list__wrapper .coupon-list .order-list__pro--item img { width: 32px; height: 32px; }
+
+.member-list__search { display: flex; position: absolute; top: 3rem; right: 1rem; }
+.member-list__search div input { height: 2rem; }
+.member-list__search button { background: #ffffff; border: 1px solid #e0e2e7; border-radius: 4px; color: #8c8d96; cursor: pointer; }
+
+.order-detail { width: 600px; margin: 0 auto; background-color: #ffffff; }
+.order-detail .order-detail__title { font-size: 2.5rem; color: #000; text-align: center; font-weight: 700; margin-bottom: 1rem; margin-top: 1rem; }
+.order-detail .order-detail__wrapper .order-detail__info { padding: 0 1rem; display: flex; flex-direction: column; }
+.order-detail .order-detail__wrapper .order-detail__info .order-info__title { font-size: 1rem; margin-bottom: 1rem; }
+.order-detail .order-detail__wrapper .order-detail__info .order-detail__item { display: flex; height: 2rem; border-top: 1px solid #8c8d96; border-right: 1px solid #8c8d96; }
+.order-detail .order-detail__wrapper .order-detail__info .order-detail__item:last-child { border-bottom: 1px solid #8c8d96; }
+.order-detail .order-detail__wrapper .order-detail__info .order-detail__item .order-detail__left { flex: 1; background-color: #000; color: #ffffff; border-bottom: 1px solid #ffffff; display: flex; justify-content: flex-start; align-items: center; padding-left: 1rem; }
+.order-detail .order-detail__wrapper .order-detail__info .order-detail__item .order-detail__right { flex: 3; padding-left: 1rem; display: flex; align-items: center; }
+.order-detail .order-detail__wrapper .order-product__info { padding: 1rem; }
+.order-detail .order-detail__wrapper .order-product__info .order-product__info--title { margin-bottom: 1rem; }
+.order-detail .order-detail__wrapper .order-product__info .product__info--item { display: flex; justify-content: flex-start; align-items: center; height: 4rem; border-top: 1px solid #8c8d96; }
+.order-detail .order-detail__wrapper .order-product__info .product__info--item:last-child { border-bottom: 1px solid #8c8d96; }
+.order-detail .order-detail__wrapper .order-product__info .product__info--item .product__info--img { flex: 1; display: flex; justify-content: center; align-items: center; }
+.order-detail .order-detail__wrapper .order-product__info .product__info--item .product__info--img img { width: 3rem; height: 3rem; }
+.order-detail .order-detail__wrapper .order-product__info .product__info--item .product__info--name { flex: 4; }
+.order-detail .order-detail__wrapper .order-product__info .product__info--item .product__info--quantity { flex: 1; text-align: center; }
+.order-detail .order-detail__wrapper .order-product__info .product__info--item .product__info--button { flex: 1; margin-left: 1rem; }
+.order-detail .order-detail__wrapper .order-product__info .product__info--item .product__info--button button { width: 4.5rem; height: 2rem; }
+.order-detail .order-detail__wrapper .order-pay__info { margin-top: 1rem; padding: 0 1rem; }
+.order-detail .order-detail__wrapper .order-pay__info .order-pay__info-item { display: flex; height: 2rem; border-top: 1px solid #8c8d96; border-right: 1px solid #8c8d96; border-bottom: 1px solid #8c8d96; }
+.order-detail .order-detail__wrapper .order-pay__info .order-pay__info-item .pay__info-item--left { flex: 1; background-color: #000; color: #ffffff; border-bottom: 1px solid #ffffff; display: flex; justify-content: flex-start; align-items: center; padding-left: 1rem; }
+.order-detail .order-detail__wrapper .order-pay__info .order-pay__info-item .pay__info-item--right { flex: 3; padding-left: 1rem; display: flex; align-items: center; }
+.order-detail .order-detail__wrapper .order-detail__close--button { margin: 1rem 0; display: flex; justify-content: center; align-items: center; }
+.order-detail .order-detail__wrapper .order-detail__close--button button { width: 4rem; height: 2rem; }
+
+.modal-open { cursor: pointer; }
+
+.member-detail { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; margin: 0 auto; background-color: #ffffff; }
+.member-detail .member-detail__title { font-size: 2.5rem; color: #000; text-align: center; font-weight: 700; margin-bottom: 1rem; margin-top: 2rem; }
+.member-detail .member-detail__wrapper { padding: 1rem; }
+.member-detail .member-detail__wrapper .member-detail__item { display: flex; align-items: center; border-top: 1px solid #8c8d96; border-right: 1px solid #8c8d96; }
+.member-detail .member-detail__wrapper .member-detail__item:last-child { border-bottom: 1px solid #8c8d96; }
+.member-detail .member-detail__wrapper .member-detail__item .member-item__left { flex: 1; text-align: center; padding-left: 1rem; background-color: #000; color: white; height: 2rem; display: flex; align-items: center; }
+.member-detail .member-detail__wrapper .member-detail__item .member-item__right { flex: 3; padding-left: 1rem; height: 2rem; display: flex; align-items: center; }
+.member-detail .member-detail__delete { display: flex; justify-content: flex-end; margin-right: 1rem; margin-top: 1rem; }
+.member-detail .member-detail__delete button { margin-top: -1rem !important; width: 4.5rem; height: 1.5rem; }
+.member-detail .member-detail__close { display: flex; justify-content: center; margin-right: 1rem; margin-top: 1rem; margin-bottom: 2rem; }
+.member-detail .member-detail__close button { width: 5rem; height: 2rem; }
+
+.pro-detail { width: 600px; margin: 0 auto; background-color: #ffffff; }
+.pro-detail .pro-modal__close { position: absolute; top: 10px; right: 10px; font-size: 2rem; cursor: pointer; }
+.pro-detail .pro-detail__title { font-size: 2.5rem; color: #000; text-align: center; font-weight: 700; margin-bottom: 1rem; margin-top: 2rem; }
+.pro-detail .pro-detail__wrapper { padding: 1rem; }
+.pro-detail .pro-detail__wrapper .pro-detail__item,
+.pro-detail .pro-detail__wrapper .pro-sub__img2 { display: flex; height: 2rem; align-items: center; justify-content: center; margin-bottom: 1rem; }
+.pro-detail .pro-detail__wrapper .pro-detail__item .pro-subinput__wrapper,
+.pro-detail .pro-detail__wrapper .pro-sub__img2 .pro-subinput__wrapper { width: 300px; }
+.pro-detail .pro-detail__wrapper .pro-detail__item.sub,
+.pro-detail .pro-detail__wrapper .pro-sub__img2.sub { height: auto; margin-top: 2rem; }
+.pro-detail .pro-detail__wrapper .pro-detail__item label,
+.pro-detail .pro-detail__wrapper .pro-sub__img2 label { margin-right: 1rem; }
+.pro-detail .pro-detail__wrapper .pro-detail__item input,
+.pro-detail .pro-detail__wrapper .pro-detail__item select,
+.pro-detail .pro-detail__wrapper .pro-sub__img2 input,
+.pro-detail .pro-detail__wrapper .pro-sub__img2 select { width: 300px; height: 2rem; }
+.pro-detail .pro-detail__wrapper .pro-detail__item input[type='file'],
+.pro-detail .pro-detail__wrapper .pro-sub__img2 input[type='file'] { margin-top: 1rem; }
+.pro-detail .pro-detail__wrapper .main-image__img { display: flex; justify-content: center; align-items: flex-start; margin-bottom: 1rem; }
+.pro-detail .pro-detail__wrapper .main-image__img img { width: 10rem; height: 10rem; }
+.pro-detail .pro-detail__wrapper .pro-sub__img2,
+.pro-detail .pro-detail__wrapper .pro-sub__img2 { margin-left: 4.5rem; }
+.pro-detail .pro-detail__wrapper .pro-detail__sub-image { display: flex; justify-content: center; align-items: center; }
+.pro-detail .pro-detail__wrapper .pro-detail__sub-image .sub-image__wrapper { display: flex; margin-bottom: 1rem; max-width: 30rem; overflow-x: scroll; }
+.pro-detail .pro-detail__wrapper .pro-detail__sub-image .sub-image__wrapper .sub-image__image { border: 1px solid #e0e2e7; width: 10rem; }
+.pro-detail .pro-detail__wrapper .pro-detail__sub-image .sub-image__wrapper .sub-image__image img { width: 10rem; height: 10rem; }
+.pro-detail .pro-detail__wrapper .pro-detail__button { display: flex; justify-content: center; align-items: center; padding: 1rem 0; }
+.pro-detail .pro-detail__wrapper .pro-detail__button button { width: 6rem; height: 2rem; }
+
+.pro-detail__name { cursor: pointer; }
+
+.essential-check { color: #f86d7d; }
+
+.my-order__section { max-width: 1000px; margin: 0 auto; padding: 2rem 0; }
+.my-order__section .my-order__title { font-size: 2rem; text-align: center; color: #8c8d96; font-weight: 700; margin-bottom: 2rem; }
+.my-order__section .my-order__wrapper { height: 32rem; }
+.my-order__section .my-order__wrapper .my-order__main { height: 3rem !important; }
+.my-order__section .my-order__wrapper .my-order__main button { width: 5rem; height: 1.5rem; }
+.my-order__section .my-order__wrapper .my-order__header,
+.my-order__section .my-order__wrapper .my-order__main { display: flex; height: 2.5rem; border-top: 1px solid #8c8d96; }
+.my-order__section .my-order__wrapper .my-order__header:last-child,
+.my-order__section .my-order__wrapper .my-order__main:last-child { border-bottom: 1px solid #8c8d96; }
+.my-order__section .my-order__wrapper .my-order__header .my-order__header--item,
+.my-order__section .my-order__wrapper .my-order__header .my-order__main--item,
+.my-order__section .my-order__wrapper .my-order__main .my-order__header--item,
+.my-order__section .my-order__wrapper .my-order__main .my-order__main--item { flex: 1; display: flex; justify-content: center; align-items: center; }
+.my-order__section .my-order__wrapper .my-order__header .my-order__header--item img,
+.my-order__section .my-order__wrapper .my-order__header .my-order__main--item img,
+.my-order__section .my-order__wrapper .my-order__main .my-order__header--item img,
+.my-order__section .my-order__wrapper .my-order__main .my-order__main--item img { width: 2.5rem; height: 2.5rem; }
+.my-order__section .my-order__wrapper .my-order__header .my-order__header--item:nth-child(2),
+.my-order__section .my-order__wrapper .my-order__header .my-order__main--item:nth-child(2),
+.my-order__section .my-order__wrapper .my-order__main .my-order__header--item:nth-child(2),
+.my-order__section .my-order__wrapper .my-order__main .my-order__main--item:nth-child(2) { flex: 4; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.my-order__section .my-order__wrapper .my-order__header .my-order__header--item:nth-child(3), .my-order__section .my-order__wrapper .my-order__header .my-order__header--item:nth-child(4), .my-order__section .my-order__wrapper .my-order__header .my-order__header--item:nth-child(5),
+.my-order__section .my-order__wrapper .my-order__header .my-order__main--item:nth-child(3),
+.my-order__section .my-order__wrapper .my-order__header .my-order__main--item:nth-child(4),
+.my-order__section .my-order__wrapper .my-order__header .my-order__main--item:nth-child(5),
+.my-order__section .my-order__wrapper .my-order__main .my-order__header--item:nth-child(3),
+.my-order__section .my-order__wrapper .my-order__main .my-order__header--item:nth-child(4),
+.my-order__section .my-order__wrapper .my-order__main .my-order__header--item:nth-child(5),
+.my-order__section .my-order__wrapper .my-order__main .my-order__main--item:nth-child(3),
+.my-order__section .my-order__wrapper .my-order__main .my-order__main--item:nth-child(4),
+.my-order__section .my-order__wrapper .my-order__main .my-order__main--item:nth-child(5) { flex: 1.5; }
+.my-order__section .pagination { margin-top: 2rem; }
+
+.my-qna__section { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+.my-qna__section .my-qna__title { font-size: 2rem; text-align: center; color: #8c8d96; font-weight: 700; margin-bottom: 2rem; }
+.my-qna__section .my-qna__wrapper { height: 32rem; }
+.my-qna__section .my-qna__wrapper .my-qna__main { height: 3rem !important; }
+.my-qna__section .my-qna__wrapper .my-qna__main button { width: 5rem; height: 1.5rem; }
+.my-qna__section .my-qna__wrapper .my-qna__header,
+.my-qna__section .my-qna__wrapper .my-qna__main { display: flex; height: 2.5rem; border-top: 1px solid #8c8d96; }
+.my-qna__section .my-qna__wrapper .my-qna__header:last-child,
+.my-qna__section .my-qna__wrapper .my-qna__main:last-child { border-bottom: 1px solid #8c8d96; }
+.my-qna__section .my-qna__wrapper .my-qna__header .my-qna__header--item,
+.my-qna__section .my-qna__wrapper .my-qna__header .my-qna__main--item,
+.my-qna__section .my-qna__wrapper .my-qna__main .my-qna__header--item,
+.my-qna__section .my-qna__wrapper .my-qna__main .my-qna__main--item { flex: 1; display: flex; justify-content: center; align-items: center; }
+.my-qna__section .my-qna__wrapper .my-qna__header .my-qna__header--item:nth-child(3),
+.my-qna__section .my-qna__wrapper .my-qna__header .my-qna__main--item:nth-child(3),
+.my-qna__section .my-qna__wrapper .my-qna__main .my-qna__header--item:nth-child(3),
+.my-qna__section .my-qna__wrapper .my-qna__main .my-qna__main--item:nth-child(3) { flex: 3; }
+.my-qna__section .pagination { margin-top: 2rem; }
+.my-qna__wrapper—main-content { height: 80%; width: 100%; }
+
+.modal-open { cursor: pointer; }
+
+.my-page__section { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
+.my-page__section .my-page__title { font-size: 2.5rem; color: #8c8d96; text-align: center; margin-bottom: 2rem; font-weight: 700; }
+.my-page__section .my-page__wrapper { margin-top: 4rem; }
+.my-page__section .my-page__wrapper .my-page__header { display: flex; padding: 0 2rem; justify-content: space-between; align-items: center; background-color: #000; color: white; height: 6rem; font-size: 2rem; }
+.my-page__section .my-page__wrapper .my-page__header .my-page__header-right { transition: all 0.3s ease-in-out; }
+.my-page__section .my-page__wrapper .my-page__header .my-page__header-right:hover { color: #e0e2e7; }
+.my-page__section .my-page__wrapper .my-page__header .my-page__header-right.my-coupon__open { cursor: pointer; }
+.my-page__section .my-page__wrapper .my-page__header .my-page__header-right span { margin-right: 1rem; }
+.my-page__section .my-page__wrapper .my-page__main { margin-top: 4rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; height: 7rem; font-size: 1.125rem; }
+.my-page__section .my-page__wrapper .my-page__main .my-page__main-left,
+.my-page__section .my-page__wrapper .my-page__main .my-page__main-right { height: 7rem; width: 330px; display: flex; justify-content: center; align-items: center; background-color: #000; color: #ffffff; }
+
+.confirm-pw__open { cursor: pointer; }
+
+.confirm-pw__wrapper { padding: 0 2rem; width: 500px; margin: 0 auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #ffffff; }
+.confirm-pw__wrapper .confirm-pw__close { position: absolute; top: 1rem; right: 1.5rem; font-size: 1.25rem; font-weight: 500; cursor: pointer; }
+.confirm-pw__wrapper form { padding: 3rem; }
+.confirm-pw__wrapper form .confirm-form { display: flex; justify-content: center; align-items: center; }
+.confirm-pw__wrapper form .confirm-form label { margin-right: 2rem; }
+.confirm-pw__wrapper form .confirm-form input { width: 200px; height: 2rem; }
+.confirm-pw__wrapper form .confirm-pw__button { display: flex; align-items: center; justify-content: center; margin-top: 1.5rem; }
+.confirm-pw__wrapper form .confirm-pw__button button { width: 7rem; height: 2rem; }
+
+.my-coupon__wrapper { padding: 0 2rem; width: 600px; margin: 0 auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #ffffff; }
+.my-coupon__wrapper .my-coupon__title { font-size: 2rem; text-align: center; margin: 2rem 0; font-weight: 500; color: #000; }
+.my-coupon__wrapper .my-coupon__table { height: 22rem; }
+.my-coupon__wrapper .my-coupon__table .my-coupon__header,
+.my-coupon__wrapper .my-coupon__table .my-coupon__main { display: flex; justify-content: flex-start; align-items: center; border-top: 1px solid #8c8d96; }
+.my-coupon__wrapper .my-coupon__table .my-coupon__main:last-child { border-bottom: 1px solid #8c8d96; }
+.my-coupon__wrapper .my-coupon__table .my-coupon__header--item,
+.my-coupon__wrapper .my-coupon__table .my-coupon__main--item { flex: 1; display: flex; align-items: center; justify-content: center; }
+.my-coupon__wrapper .my-coupon__table .my-coupon__header--item:nth-child(1),
+.my-coupon__wrapper .my-coupon__table .my-coupon__main--item:nth-child(1) { flex: 1.5; }
+.my-coupon__wrapper .my-coupon__table .my-coupon__header--item { height: 2rem; }
+.my-coupon__wrapper .my-coupon__table .my-coupon__main--item { height: 2.5rem; }
+.my-coupon__wrapper .my-coupon__close { margin: 2rem 0; display: flex; align-items: center; justify-content: center; }
+.my-coupon__wrapper .my-coupon__close button { width: 5rem; height: 2rem; }
+
+.my-qna__wrapper--wrapper { width: 600px; margin: 0 auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #ffffff; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--header { width: 100%; height: 5rem; background-color: #000; color: #ffffff; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--header h1 { font-size: 1.375rem; font-weight: 500; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--header span { font-size: 0.75rem; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--main .my-qna__wrapper--main-items { display: flex; align-items: center; height: 5rem; padding: 0 1rem; border-bottom: 1px solid #8c8d96; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--main .my-qna__wrapper--main-items .my-qna__wrapper--main-item { flex: 1; font-size: 0.875rem; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--main .my-qna__wrapper--main-items .my-qna__wrapper--main-item.my-qna__wrapper--main-item-img img { width: 3rem; height: 3rem; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--main .my-qna__wrapper--main-items .my-qna__wrapper--main-item:nth-child(3) { flex: 3; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--main .my-qna__wrapper--main-wrapper { width: 100%; height: 300px; padding: 1rem; position: relative; border-bottom: 1px solid #8c8d96; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--main .my-qna__wrapper--main-wrapper span { line-height: 1.5; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--main .my-qna__wrapper--main-wrapper .my-qna__wrapper--main-buttons { position: absolute; right: 1rem; bottom: 1rem; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--main .my-qna__wrapper--main-wrapper .my-qna__wrapper--main-buttons button { width: 5rem; height: 1.5rem; }
+.my-qna__wrapper--wrapper .my-qna__wrapper--main .my-qna__wrapper--main-wrapper .my-qna__wrapper--main-buttons button:first-child { margin-right: 1rem; }
+.my-qna__wrapper--wrapper .my-qna__wrapper-close { display: flex; justify-content: center; align-items: center; margin: 1.5rem 0; }
+.my-qna__wrapper--wrapper .my-qna__wrapper-close button { width: 4rem; height: 1.5rem; }
+
+.my-qna__main--item-content { cursor: pointer; }
+
+.confirm-pw__modal { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 100; }
+.confirm-pw__modal.open { display: block; }
+
+.coupon-add__form { width: 460px; margin: 0 auto; padding: 2rem 1rem; }
+.coupon-add__form .coupon-add__form--title { font-size: 2rem; text-align: center; padding-bottom: 2rem; color: #8c8d96; }
+.coupon-add__form .coupon__form { display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.coupon-add__form .coupon__form .coupon-name,
+.coupon-add__form .coupon__form .coupon-discount,
+.coupon-add__form .coupon__form .coupon-min-date,
+.coupon-add__form .coupon__form .coupon-max-date { width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 2rem; }
+.coupon-add__form .coupon__form .coupon-name label,
+.coupon-add__form .coupon__form .coupon-discount label,
+.coupon-add__form .coupon__form .coupon-min-date label,
+.coupon-add__form .coupon__form .coupon-max-date label { width: 30%; }
+.coupon-add__form .coupon__form .coupon-name label .essential,
+.coupon-add__form .coupon__form .coupon-discount label .essential,
+.coupon-add__form .coupon__form .coupon-min-date label .essential,
+.coupon-add__form .coupon__form .coupon-max-date label .essential { color: #f86d7d; }
+.coupon-add__form .coupon__form .coupon-name input,
+.coupon-add__form .coupon__form .coupon-discount input,
+.coupon-add__form .coupon__form .coupon-min-date input,
+.coupon-add__form .coupon__form .coupon-max-date input { width: 60%; height: 2rem; }
+.coupon-add__form .coupon__form .coupon-add__button-wrapper button { width: 4.5rem; height: 2rem; }
+.coupon-discount { position: relative; }
+
+.my-review__section { width: 900px; margin: 0 auto; padding: 2rem 0; }
+.my-review__section .my-review__title { font-size: 2rem; color: #8c8d96; text-align: center; font-weight: 700; margin-bottom: 2rem; }
+.my-review__section .my-review__wrapper { height: 32rem; }
+.my-review__section .my-review__wrapper .my-review__header,
+.my-review__section .my-review__wrapper .my-review__main { display: flex; border-top: 1px solid #8c8d96; border-bottom: 1px solid #8c8d96; height: 2rem; align-items: center; }
+.my-review__section .my-review__wrapper .my-review__header .my-review__header--item,
+.my-review__section .my-review__wrapper .my-review__header .my-review__main--item,
+.my-review__section .my-review__wrapper .my-review__main .my-review__header--item,
+.my-review__section .my-review__wrapper .my-review__main .my-review__main--item { flex: 1; display: flex; align-items: center; justify-content: center; }
+.my-review__section .my-review__wrapper .my-review__header .my-review__header--item:nth-child(3),
+.my-review__section .my-review__wrapper .my-review__header .my-review__main--item:nth-child(3),
+.my-review__section .my-review__wrapper .my-review__main .my-review__header--item:nth-child(3),
+.my-review__section .my-review__wrapper .my-review__main .my-review__main--item:nth-child(3) { flex: 2.5; }
+.my-review__section .my-review__wrapper .my-review__header .my-review__header--item:nth-child(2),
+.my-review__section .my-review__wrapper .my-review__header .my-review__main--item:nth-child(2),
+.my-review__section .my-review__wrapper .my-review__main .my-review__header--item:nth-child(2),
+.my-review__section .my-review__wrapper .my-review__main .my-review__main--item:nth-child(2) { flex: 2.5; }
+.my-review__section .my-review__wrapper .my-review__header .my-review__header--item img,
+.my-review__section .my-review__wrapper .my-review__header .my-review__main--item img,
+.my-review__section .my-review__wrapper .my-review__main .my-review__header--item img,
+.my-review__section .my-review__wrapper .my-review__main .my-review__main--item img { width: 64px; height: 64px; }
+.my-review__section .my-review__wrapper .my-review__main { height: 6rem; border-top: 0; }
+.my-review__section .pagination { margin-top: 2rem; }
+
+.review-write__wrapper { width: 600px; margin: 0 auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.review-write__wrapper .review-write__title { font-size: 2rem; font-weight: 700; color: #000; text-align: center; margin-bottom: 2rem; }
+.review-write__wrapper form { padding: 2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #000; border-radius: 8px; }
+.review-write__wrapper form input { width: 100%; margin-bottom: 2rem; }
+.review-write__wrapper form textarea { resize: none; height: 200px; overflow: scroll; }
+.review-write__wrapper form button { margin-top: 2rem; height: 2rem; }
+
+.order-form__section { width: 800px; margin: 0 auto; padding: 2rem 0; }
+.order-form__section .order-form__title { width: 100%; height: 6rem; font-size: 2rem; font-weight: 700; color: #ffffff; display: flex; justify-content: center; align-items: center; background-color: #000; }
+.order-form__section .order-form__member-info,
+.order-form__section .order-form__pay { padding: 2rem 0; }
+.order-form__section .order-form__member-info .order-form__orderer-info,
+.order-form__section .order-form__member-info .order-form__receiver-info,
+.order-form__section .order-form__member-info .order-form__pay-info,
+.order-form__section .order-form__pay .order-form__orderer-info,
+.order-form__section .order-form__pay .order-form__receiver-info,
+.order-form__section .order-form__pay .order-form__pay-info { margin-bottom: 2rem; }
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__title,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__title,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__title,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__title,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__title,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__title,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__title,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__title,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__title,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__title,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__title,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__title,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__title,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__title,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__title,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__title,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__title,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__title { text-align: start; display: block; margin-bottom: 1rem; }
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items { display: flex; height: 2rem; }
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .orderer-info__item,
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .receiver-info__item,
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .pay-info__item,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .orderer-info__item,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .receiver-info__item,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .pay-info__item,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .orderer-info__item,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .receiver-info__item,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .pay-info__item,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .orderer-info__item,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .receiver-info__item,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .pay-info__item,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .orderer-info__item,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .receiver-info__item,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .pay-info__item,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .orderer-info__item,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .receiver-info__item,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .pay-info__item,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .orderer-info__item,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .receiver-info__item,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .pay-info__item,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .orderer-info__item,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .receiver-info__item,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .pay-info__item,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .orderer-info__item,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .receiver-info__item,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .pay-info__item,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .orderer-info__item,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .receiver-info__item,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .pay-info__item,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .orderer-info__item,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .receiver-info__item,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .pay-info__item,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .orderer-info__item,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .receiver-info__item,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .pay-info__item,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .orderer-info__item,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .receiver-info__item,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .pay-info__item,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .orderer-info__item,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .receiver-info__item,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .pay-info__item,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .orderer-info__item,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .receiver-info__item,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .pay-info__item,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .orderer-info__item,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .receiver-info__item,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .pay-info__item,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .orderer-info__item,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .receiver-info__item,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .pay-info__item,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .orderer-info__item,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .receiver-info__item,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .pay-info__item { display: flex; align-items: center; }
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .orderer-info__item.left,
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .receiver-info__item.left,
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .pay-info__item.left,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .orderer-info__item.left,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .receiver-info__item.left,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .pay-info__item.left,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .orderer-info__item.left,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .receiver-info__item.left,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .pay-info__item.left,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .orderer-info__item.left,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .receiver-info__item.left,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .pay-info__item.left,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .orderer-info__item.left,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .receiver-info__item.left,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .pay-info__item.left,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .orderer-info__item.left,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .receiver-info__item.left,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .pay-info__item.left,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .orderer-info__item.left,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .receiver-info__item.left,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .pay-info__item.left,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .orderer-info__item.left,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .receiver-info__item.left,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .pay-info__item.left,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .orderer-info__item.left,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .receiver-info__item.left,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .pay-info__item.left,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .orderer-info__item.left,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .receiver-info__item.left,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .pay-info__item.left,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .orderer-info__item.left,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .receiver-info__item.left,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .pay-info__item.left,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .orderer-info__item.left,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .receiver-info__item.left,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .pay-info__item.left,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .orderer-info__item.left,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .receiver-info__item.left,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .pay-info__item.left,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .orderer-info__item.left,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .receiver-info__item.left,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .pay-info__item.left,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .orderer-info__item.left,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .receiver-info__item.left,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .pay-info__item.left,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .orderer-info__item.left,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .receiver-info__item.left,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .pay-info__item.left,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .orderer-info__item.left,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .receiver-info__item.left,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .pay-info__item.left,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .orderer-info__item.left,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .receiver-info__item.left,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .pay-info__item.left { flex: 1; background-color: black; color: white; border-bottom: 1px solid #ffffff; justify-content: center; }
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .orderer-info__item.right,
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .receiver-info__item.right,
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .pay-info__item.right,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .orderer-info__item.right,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .receiver-info__item.right,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .pay-info__item.right,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .orderer-info__item.right,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .receiver-info__item.right,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .pay-info__item.right,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .orderer-info__item.right,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .receiver-info__item.right,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .pay-info__item.right,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .orderer-info__item.right,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .receiver-info__item.right,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .pay-info__item.right,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .orderer-info__item.right,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .receiver-info__item.right,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .pay-info__item.right,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .orderer-info__item.right,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .receiver-info__item.right,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .pay-info__item.right,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .orderer-info__item.right,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .receiver-info__item.right,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .pay-info__item.right,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .orderer-info__item.right,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .receiver-info__item.right,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .pay-info__item.right,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .orderer-info__item.right,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .receiver-info__item.right,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .pay-info__item.right,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .orderer-info__item.right,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .receiver-info__item.right,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .pay-info__item.right,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .orderer-info__item.right,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .receiver-info__item.right,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .pay-info__item.right,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .orderer-info__item.right,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .receiver-info__item.right,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .pay-info__item.right,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .orderer-info__item.right,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .receiver-info__item.right,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .pay-info__item.right,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .orderer-info__item.right,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .receiver-info__item.right,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .pay-info__item.right,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .orderer-info__item.right,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .receiver-info__item.right,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .pay-info__item.right,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .orderer-info__item.right,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .receiver-info__item.right,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .pay-info__item.right,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .orderer-info__item.right,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .receiver-info__item.right,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .pay-info__item.right { flex: 5; border: 1px solid #e0e2e7; padding-left: 2rem; }
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .orderer-info__item.right button,
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .receiver-info__item.right button,
+.order-form__section .order-form__member-info .order-form__orderer-info .orderer-info__items .pay-info__item.right button,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .orderer-info__item.right button,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .receiver-info__item.right button,
+.order-form__section .order-form__member-info .order-form__orderer-info .receiver-info__items .pay-info__item.right button,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .orderer-info__item.right button,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .receiver-info__item.right button,
+.order-form__section .order-form__member-info .order-form__orderer-info .pay-info__items .pay-info__item.right button,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .orderer-info__item.right button,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .receiver-info__item.right button,
+.order-form__section .order-form__member-info .order-form__receiver-info .orderer-info__items .pay-info__item.right button,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .orderer-info__item.right button,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .receiver-info__item.right button,
+.order-form__section .order-form__member-info .order-form__receiver-info .receiver-info__items .pay-info__item.right button,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .orderer-info__item.right button,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .receiver-info__item.right button,
+.order-form__section .order-form__member-info .order-form__receiver-info .pay-info__items .pay-info__item.right button,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .orderer-info__item.right button,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .receiver-info__item.right button,
+.order-form__section .order-form__member-info .order-form__pay-info .orderer-info__items .pay-info__item.right button,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .orderer-info__item.right button,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .receiver-info__item.right button,
+.order-form__section .order-form__member-info .order-form__pay-info .receiver-info__items .pay-info__item.right button,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .orderer-info__item.right button,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .receiver-info__item.right button,
+.order-form__section .order-form__member-info .order-form__pay-info .pay-info__items .pay-info__item.right button,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .orderer-info__item.right button,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .receiver-info__item.right button,
+.order-form__section .order-form__pay .order-form__orderer-info .orderer-info__items .pay-info__item.right button,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .orderer-info__item.right button,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .receiver-info__item.right button,
+.order-form__section .order-form__pay .order-form__orderer-info .receiver-info__items .pay-info__item.right button,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .orderer-info__item.right button,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .receiver-info__item.right button,
+.order-form__section .order-form__pay .order-form__orderer-info .pay-info__items .pay-info__item.right button,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .orderer-info__item.right button,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .receiver-info__item.right button,
+.order-form__section .order-form__pay .order-form__receiver-info .orderer-info__items .pay-info__item.right button,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .orderer-info__item.right button,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .receiver-info__item.right button,
+.order-form__section .order-form__pay .order-form__receiver-info .receiver-info__items .pay-info__item.right button,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .orderer-info__item.right button,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .receiver-info__item.right button,
+.order-form__section .order-form__pay .order-form__receiver-info .pay-info__items .pay-info__item.right button,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .orderer-info__item.right button,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .receiver-info__item.right button,
+.order-form__section .order-form__pay .order-form__pay-info .orderer-info__items .pay-info__item.right button,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .orderer-info__item.right button,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .receiver-info__item.right button,
+.order-form__section .order-form__pay .order-form__pay-info .receiver-info__items .pay-info__item.right button,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .orderer-info__item.right button,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .receiver-info__item.right button,
+.order-form__section .order-form__pay .order-form__pay-info .pay-info__items .pay-info__item.right button { margin-left: 1rem; height: 1.5rem; }
+.order-form__section .order-form__pro-info { padding-bottom: 2rem; }
+.order-form__section .order-form__pro-info .order-form__pro-title { margin-bottom: 1rem; }
+.order-form__section .order-form__pro-info .order-form__pro-items { display: flex; height: 6rem; align-items: center; border-top: 1px solid #8c8d96; }
+.order-form__section .order-form__pro-info .order-form__pro-items:last-child { border-bottom: 1px solid #8c8d96; }
+.order-form__section .order-form__pro-info .order-form__pro-items .order-form__pro-item { flex: 1; display: flex; justify-content: center; align-items: center; }
+.order-form__section .order-form__pro-info .order-form__pro-items .order-form__pro-item.order-pro__image { height: 100%; }
+.order-form__section .order-form__pro-info .order-form__pro-items .order-form__pro-item.order-pro__image img { width: 64px; height: 64px; }
+.order-form__section .order-form__pro-info .order-form__pro-items .order-form__pro-item.order-pro__name { height: 100%; flex: 4; }
+.order-form__section .order-form__pro-info .order-form__pro-items .order-form__pro-item.order-pro__quan { position: relative; height: 100%; }
+.order-form__section .order-form__pro-info .order-form__pro-items .order-form__pro-item.order-pro__quan::before { content: ''; position: absolute; width: 1px; height: 80%; background-color: #8c8d96; left: 0; }
+.order-form__section .order-form__pro-info .order-form__pro-items .order-form__pro-item.order-pro__price { position: relative; height: 100%; }
+.order-form__section .order-form__pro-info .order-form__pro-items .order-form__pro-item.order-pro__price::before { content: ''; position: absolute; width: 1px; height: 80%; background-color: #8c8d96; left: 0; }
+.order-form__section .order-form__button-wrapper { display: flex; justify-content: center; align-items: center; }
+.order-form__section .order-form__button-wrapper button { height: 2rem; }
+
+.qna-write__form { width: 600px; margin: 0 auto; padding: 2rem 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.qna-write__form .qna-write__title { font-size: 2rem; font-weight: 700; text-align: center; color: #000; margin-bottom: 2rem; }
+.qna-write__form .qna-write__wrapper { padding: 2rem; border: 1px solid #8c8d96; border-radius: 8px; }
+.qna-write__form .qna-write__wrapper .qna-write__select { margin-bottom: 1rem; }
+.qna-write__form .qna-write__wrapper .qna-write__input { margin-bottom: 2rem; }
+.qna-write__form .qna-write__wrapper .qna-write__textarea { width: 100%; height: 300px; border: 1px solid #e0e2e7; resize: none; border-radius: 4px; font-size: 1rem; padding: 1rem; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; }
+.qna-write__form .qna-write__wrapper .qna-write__button { display: flex; justify-content: center; align-items: center; margin-top: 2rem; }
+.qna-write__form .qna-write__wrapper .qna-write__button button { height: 2rem; }
+
+.estimate-section { padding: 2rem; max-width: 1200px; margin: 0 auto; display: flex; }
+.estimate-section .estimate-left { width: 60%; border-radius: 8px; border-bottom: 1px solid #000; }
+.estimate-section .estimate-left .estimate-left__header { padding: 1rem; width: 100%; border-top-left-radius: 8px; border-top-right-radius: 8px; background-color: black; }
+.estimate-section .estimate-left .estimate-left__header .estimate-left__title { display: block; font-size: 1.5rem; color: #ffffff; font-weight: 500; }
+.estimate-section .estimate-left .estimate-left__header .estimate-left__items { color: white; margin-top: 1rem; display: flex; align-items: center; }
+.estimate-section .estimate-left .estimate-left__header .estimate-left__items span { display: block; font-size: 1.125rem; font-weight: 500; height: 100%; margin-right: 1rem; width: 6rem; flex: 1; }
+.estimate-section .estimate-left .estimate-left__header .estimate-left__items .estimate-left__wrapper { display: flex; flex-wrap: wrap; flex: 6; line-height: 1.5; }
+.estimate-section .estimate-left .estimate-left__header .estimate-left__items .estimate-left__wrapper .estimate-left__item-wrapper { display: flex; align-items: center; }
+.estimate-section .estimate-left .estimate-left__header .estimate-left__items .estimate-left__wrapper .estimate-left__item-wrapper label { margin-right: 0.75rem; margin-left: 0.25rem; }
+.estimate-section .estimate-left .estimate-left__header .estimate-left__items .estimate-left__wrapper .estimate-left__item-wrapper input[type='checkbox'] { -webkit-appearance: none; position: relative; width: 12px; height: 12px; cursor: pointer; outline: none !important; border-radius: 2px; background: #fbfbfb; }
+.estimate-section .estimate-left .estimate-left__header .estimate-left__items .estimate-left__wrapper .estimate-left__item-wrapper input[type='checkbox']::before { content: '\2713'; position: absolute; top: 50%; left: 50%; overflow: hidden; transform: scale(0) translate(-50%, -50%); line-height: 1; }
+.estimate-section .estimate-left .estimate-left__header .estimate-left__items .estimate-left__wrapper .estimate-left__item-wrapper input[type='checkbox']:hover { border-color: rgba(170, 170, 170, 0.5); }
+.estimate-section .estimate-left .estimate-left__header .estimate-left__items .estimate-left__wrapper .estimate-left__item-wrapper input[type='checkbox']:checked { background-color: #f86d7d; border-color: rgba(255, 255, 255, 0.3); color: white; }
+.estimate-section .estimate-left .estimate-left__header .estimate-left__items .estimate-left__wrapper .estimate-left__item-wrapper input[type='checkbox']:checked::before { border-radius: 2px; transform: scale(1) translate(-50%, -50%); }
+.estimate-section .estimate-left .estimate-left__main { width: 100%; border: 1px solid #000; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; height: 40rem; overflow-y: scroll; }
+.estimate-section .estimate-left .estimate-left__main .estimate-left__item { display: flex; align-items: center; justify-content: center; height: 8rem; padding: 1rem; border-bottom: 1px solid #000; }
+.estimate-section .estimate-left .estimate-left__main .estimate-left__item .estimate-left__item-img { width: 96px; height: 96px; flex: 1; }
+.estimate-section .estimate-left .estimate-left__main .estimate-left__item .estimate-left__item-name { flex: 4; padding: 1rem; }
+.estimate-section .estimate-left .estimate-left__main .estimate-left__item .estimate-left__item-wrapper { display: flex; flex-direction: column; }
+.estimate-section .estimate-left .estimate-left__main .estimate-left__item .estimate-left__item-wrapper .estimate-left__item-price { font-size: 1.5rem; font-weight: 500; color: #3da5f5; margin-bottom: 1rem; }
+.estimate-section .estimate-left .estimate-left__main .estimate-left__item .estimate-left__item-wrapper .estimate-left__item-button { height: 2rem; }
+.estimate-section .estimate-right { width: 40%; margin-left: 2rem; }
+.estimate-section .estimate-right .estimate-right__item .estimate-right__item--menu { display: flex; justify-content: flex-start; align-items: center; background-color: #000; color: #ffffff; font-weight: 500; height: 2.75rem; font-size: 1.125rem; border-top-left-radius: 8px; border-top-right-radius: 8px; padding: 0 1rem; border-bottom: 1px solid #e0e2e7; cursor: pointer; }
+.estimate-section .estimate-right .estimate-right__item .estimate-right__item--pro { display: flex; flex-direction: column; justify-content: flex-start; align-items: center; border: 2px solid #8c8d96; position: relative; }
+.estimate-section .estimate-right .estimate-right__item .estimate-right__item--pro h3 { padding: 1.25rem; }
+.estimate-section .estimate-right .estimate-right__item .estimate-right__item--pro p { color: #3da5f5; margin-bottom: 1.5rem; }
+.estimate-section .estimate-right .estimate-right__item .estimate-right__item--pro .product-add__wrapper { position: absolute; bottom: 10px; right: 10px; }
+.estimate-section .estimate-right .estimate-right__item .estimate-right__item--pro .estimate-right__item--delete { position: absolute; top: 5px; font-weight: 500; color: #8c8d96; font-size: 1.25rem; right: 0.5rem; cursor: pointer; }
+.estimate-section .estimate-right .estimate-right__price { display: flex; justify-content: space-between; padding: 1rem; height: 7rem; border: 2px solid #8c8d96; position: relative; }
+.estimate-section .estimate-right .estimate-right__price h1 { font-size: 1.25rem; font-weight: 700; }
+.estimate-section .estimate-right .estimate-right__price span { color: #f86d7d; font-size: 1.25rem; font-weight: 500; }
+.estimate-section .estimate-right .estimate-right__price button { position: absolute; bottom: 1rem; right: 1rem; height: 2rem; }
+
+.estimate-coupon__modal--wrapper { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 100; }
+.estimate-coupon__modal--wrapper.open { display: block; }
+.estimate-coupon__modal--wrapper .estimate-coupon__modal { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; margin: 0 auto; background-color: #ffffff; padding: 2rem 1rem; }
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .coupon__modal--title { font-size: 2rem; text-align: center; font-weight: 700; color: #8c8d96; text-align: center; padding: 2rem 0; }
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--header,
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--main { display: flex; }
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--header .coupon-modal__header--item,
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--main .coupon-modal__header--item { border-top: 1px solid #8c8d96; border-bottom: 1px solid #8c8d96; }
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--header .coupon-modal__main--item,
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--main .coupon-modal__main--item { border-bottom: 1px solid #8c8d96; }
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--header .coupon-modal__header--item,
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--header .coupon-modal__main--item,
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--main .coupon-modal__header--item,
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--main .coupon-modal__main--item { flex: 1; display: flex; justify-content: center; align-items: center; padding: 1rem 0; }
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--header .coupon-modal__header--item:nth-child(2),
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--header .coupon-modal__main--item:nth-child(2),
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--main .coupon-modal__header--item:nth-child(2),
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .estimate-coupon__modal--main .coupon-modal__main--item:nth-child(2) { flex: 2; }
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .coupon-modal__button { display: flex; justify-content: center; align-items: center; margin-top: 2rem; }
+.estimate-coupon__modal--wrapper .estimate-coupon__modal .coupon-modal__button button { height: 2rem; padding: 0 2rem; }
+
+.footer { background-color: #000; padding: 3rem 5rem; }
+.footer .footer-wrapper { color: #ffffff; display: flex; margin: 0 auto; justify-content: space-between; max-width: 800px; }
+.footer .footer-wrapper .footer-left { display: flex; flex-direction: column; }
+.footer .footer-wrapper .footer-left .footer-left-items { margin: 0.5rem 0; font-weight: 500; }
+.footer .footer-wrapper .footer-right { display: flex; align-items: center; }
+.footer .footer-wrapper .footer-right i { font-size: 6rem; }
+.footer .footer-wrapper .footer-right .footer-right-info { display: flex; flex-direction: column; font-size: 1.25rem; font-weight: 500; margin-left: 1.25rem; }
+
+.pro-sub__image--wrapper { width: 300px; height: 120px; display: flex; overflow-x: scroll; margin-left: 16px; }
+.pro-sub__image--wrapper .pro-sub__image--wrapper-item { position: relative; }
+.pro-sub__image--wrapper .pro-sub__image--wrapper-item span { width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; border: 1px solid #e0e2e7; margin: 0 !important; position: relative; cursor: pointer; }
+.pro-sub__image--wrapper .pro-sub__image--wrapper-item span img { width: 100px; height: 100px; }
+.pro-sub__image--wrapper .pro-sub__image--wrapper-item .sub-image__input { display: none; }
+.pro-sub__image--wrapper .pro-sub__image--wrapper-item i { position: absolute; color: white; font-size: 1.25rem; cursor: pointer; opacity: 1 !important; display: none; }
+.pro-sub__image--wrapper .pro-sub__image--wrapper-item i:hover { color: red; }
+.pro-sub__image--wrapper .pro-sub__image--wrapper-item i.bi-pencil-square { top: 50%; left: 20px; transform: translateY(-50%); }
+.pro-sub__image--wrapper .pro-sub__image--wrapper-item i.bi-trash3 { top: 50%; right: 20px; transform: translateY(-50%); }
+
+.pro-detail__item.sub { position: relative; }
+.pro-detail__item.sub .pro-sub__image-button--wrapper { position: absolute; top: 50%; right: -10px; transform: translateY(-50%); }
+.pro-detail__item.sub .pro-sub__image-button--wrapper button { height: 2rem; }
+
+.pro-main__image--wrapper { width: 300px; height: auto; display: flex; }
+.pro-main__image--wrapper .pro-main__image--wrapper-item { position: relative; }
+.pro-main__image--wrapper .pro-main__image--wrapper-item span { width: 100px; height: 100px; display: flex; justify-content: center; align-items: center; border: 1px solid #e0e2e7; margin: 0 !important; position: relative; cursor: pointer; }
+.pro-main__image--wrapper .pro-main__image--wrapper-item span img { width: 100px; height: 100px; }
+.pro-main__image--wrapper .pro-main__image--wrapper-item .main-image__input { display: none; }
+.pro-main__image--wrapper .pro-main__image--wrapper-item i { position: absolute; color: white; font-size: 1.25rem; cursor: pointer; opacity: 1 !important; display: none; }
+.pro-main__image--wrapper .pro-main__image--wrapper-item i:hover { color: red; }
+.pro-main__image--wrapper .pro-main__image--wrapper-item i.bi-pencil-square { top: 50%; left: 20px; transform: translateY(-50%); }
+.pro-main__image--wrapper .pro-main__image--wrapper-item i.bi-trash3 { top: 50%; right: 20px; transform: translateY(-50%); }
+
+.pro-detail__item { position: relative; }
+.pro-detail__item.main { height: auto !important; }
+.pro-detail__item .pro-main__image-button--wrapper { position: absolute; top: 50%; right: -10px; transform: translateY(-50%); }
+.pro-detail__item .pro-main__image-button--wrapper button { height: 2rem; }
+
+#kakao_login_button {
+    margin: 0px 0px 16px; height: 43px;}
+
+#kakao_login_img {
+    width: inherit; height: inherit;}
+
+.id-check-message { position: absolute; left: 0; bottom: 0; font-size: 0.75rem; color: #f86d7d; }
+
+.no_data_text {
+    color: #8c8d96; text-align: center; margin-top: 1rem; font-weight: bold; font-size: 1.5em;}
+
+.discount_valid { position: absolute; left: 9.3rem; bottom: -1rem; font-size: 0.75rem; color: #f86d7d; display: none; }
+
+.discount_valid.warning { display: block; }
+
+.qna--item__delete { position: absolute; right: 1.5rem; bottom: 0.2rem; font-size: 1.25rem; cursor: pointer;}
+
+.qna--item__update { position: absolute; right: 3.5rem; bottom: 0.2rem; font-size: 1.25rem; cursor: pointer;}
+
+.email-check-message { position: absolute; left: -0.6rem; bottom: 0; font-size: 0.75rem; color: #f86d7d; }

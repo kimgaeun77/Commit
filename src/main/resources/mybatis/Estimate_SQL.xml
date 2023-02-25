@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="estimate">
+
+    <select id="selectEstimateList" resultType="hashmap">
+
+<![CDATA[
+        SELECT A.PRO_IDX,
+               NAME,
+               CATEGORY,
+               PRICE,
+               MAIN_IMG,
+               B.DETAIL1,
+               B.DETAIL2,
+               B.DETAIL3,
+               B.DETAIL4
+        FROM PRODUCT A
+                 LEFT JOIN DETAIL B ON A.PRO_IDX = B.PRO_IDX
+        WHERE DEL = 'N'
+          AND PRO_GROUP = 'STUFF'
+          AND STOCK > 0
+        ]]>
+
+    </select>
+
+</mapper>
