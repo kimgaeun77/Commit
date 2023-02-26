@@ -71,39 +71,39 @@
 
 ### 🚀 주요기능
 ---
-회원가입 - [상세보기](http://www.naver.com/)
+회원가입 - [상세보기](https://github.com/kimgaeun77/Commit/wiki/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85)
 
 * ID, E-mail 중복확인
 * 비밀번호 암호화
 
-로그인 - [상세보기](http://www.naver.com/)
+로그인 - [상세보기](https://github.com/kimgaeun77/Commit/wiki/%EB%A1%9C%EA%B7%B8%EC%9D%B8)
 
 * DB값 검증
 * ID 찾기
 * 임시 비밀번호 메일 전송
 * 카카오 API 로그인
     
-상품 - [상세보기](http://www.naver.com/)
+상품 - [상세보기](https://github.com/kimgaeun77/Commit/wiki/%EC%83%81%ED%92%88)
 
 * 상품 주문
 * 주문 취소
 
-관리자 페이지 - [상세보기](http://www.naver.com/)
+관리자 페이지 - [상세보기](https://github.com/kimgaeun77/Commit/wiki/%EA%B4%80%EB%A6%AC%EC%9E%90-%ED%8E%98%EC%9D%B4%EC%A7%80)
 
 * 상품 등록
 * 상품 수정
 
-마이페이지 - [상세보기](http://www.naver.com/)
+마이페이지 - [상세보기](https://github.com/kimgaeun77/Commit/wiki/%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80)
 
 * 주문 목록
 * 주문 상세
 * 리뷰 작성
 
-공지사항 - [상세보기](http://www.naver.com/)
+공지사항 - [상세보기](https://github.com/kimgaeun77/Commit/wiki/%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD)
 
 * 공지사항 CRUD
 * 공지사항 파일 업로드, 다운로드
 
-페이징 - [상세보기](http://www.naver.com/)
+페이징 - [상세보기](https://github.com/kimgaeun77/Commit/wiki/%ED%8E%98%EC%9D%B4%EC%A7%95)
 
 * 페이징 처리
