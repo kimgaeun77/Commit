@@ -121,7 +121,13 @@ function createContents(res) {
                break;
 
             case 3:
-               main_item.innerHTML = res[i].PHONE;
+               console.log(res[i].PHONE === undefined);
+               if(res[i].PHONE === undefined){
+                  main_item.innerText = '미입력';
+               }
+               else{
+                  main_item.innerHTML = res[i].PHONE;
+               }
                break;
 
             case 4:
@@ -133,11 +139,11 @@ function createContents(res) {
       noticeList.appendChild(main_main);
    }
 
-   const member_id = document.querySelectorAll(".member-id");
-   const member = document.querySelectorAll(".order-list__main--main");
+   const member_id = document.querySelectorAll(".member-id");//회원 아이디
+   const memberDetail = document.querySelectorAll(".member-modal-open");//회원 번호
 
-   for (let i = 0; i < member.length; i++) {
-      member[i].addEventListener("click", () => {
+   for (let i = 0; i < memberDetail.length; i++) {
+      memberDetail[i].addEventListener("click", () => {
          window.open(
              "/admin/member/detail?MEM_ID=" + member_id[i].innerHTML,
              "Child",

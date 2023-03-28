@@ -151,7 +151,6 @@ function createContents(res) {
 	}
 
 	const pro_idx = document.querySelectorAll(".pro_idx");
-	const pro = document.querySelectorAll(".pro-detail__name");
 	const deleteButton = document.querySelectorAll(".bi-x");
 
 	for (let i = 0; i < deleteButton.length; i++) {
@@ -172,8 +171,8 @@ function createContents(res) {
 		});
 	}
 
-	for (let i = 0; i < pro.length; i++) {
-		pro[i].addEventListener("click", () => {
+	for (let i = 0; i < pro_idx.length; i++) {
+		pro_idx[i].addEventListener("click", () => {
 			window.open(
 				"/admin/pro/update?PRO_IDX=" + pro_idx[i].innerHTML,
 				"Child",

@@ -65,7 +65,7 @@ function createContents(res) {
 			main_item.classList.add("order-list__main--item");
 			switch (j) {
 				case 0:
-					main_item.classList.add("modal-open");
+					main_item.classList.add("order-modal-open");
 					main_item.innerHTML = res[i].ORDER_IDX;
 					break;
 
@@ -109,7 +109,7 @@ function createContents(res) {
 	}
 
 	const selectBox = document.querySelectorAll(".selectOrder");
-	const order_idx = document.querySelectorAll(".modal-open");
+	const order_idx = document.querySelectorAll(".order-modal-open");
 
 	for (let i = 0; i < order_idx.length; i++) {
 		order_idx[i].addEventListener("click", () => {

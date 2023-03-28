@@ -1157,7 +1157,7 @@ head { font-family: 'Noto Sans KR', sans-serif; }
 .pro-detail .pro-detail__wrapper .pro-detail__button { display: flex; justify-content: center; align-items: center; padding: 1rem 0; }
 .pro-detail .pro-detail__wrapper .pro-detail__button button { width: 6rem; height: 2rem; }
 
-.pro-detail__name { cursor: pointer; }
+/*.pro-detail__name { cursor: pointer; }*/
 
 .essential-check { color: #f86d7d; }
 
@@ -1193,6 +1193,7 @@ head { font-family: 'Noto Sans KR', sans-serif; }
 .my-order__section .my-order__wrapper .my-order__main .my-order__main--item:nth-child(4),
 .my-order__section .my-order__wrapper .my-order__main .my-order__main--item:nth-child(5) { flex: 1.5; }
 .my-order__section .pagination { margin-top: 2rem; }
+.my-order__open:hover { text-decoration: underline; }
 
 .my-qna__section { max-width: 800px; margin: 0 auto; padding: 2rem 0; }
 .my-qna__section .my-qna__title { font-size: 2rem; text-align: center; color: #8c8d96; font-weight: 700; margin-bottom: 2rem; }
@@ -1270,7 +1271,7 @@ head { font-family: 'Noto Sans KR', sans-serif; }
 .my-qna__wrapper--wrapper .my-qna__wrapper-close { display: flex; justify-content: center; align-items: center; margin: 1.5rem 0; }
 .my-qna__wrapper--wrapper .my-qna__wrapper-close button { width: 4rem; height: 1.5rem; }
 
-.my-qna__main--item-content { cursor: pointer; }
+.my-qna__main--item-content:hover { cursor: pointer; text-decoration: underline; }
 
 .confirm-pw__modal { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 100; }
 .confirm-pw__modal.open { display: block; }
@@ -1725,3 +1726,9 @@ head { font-family: 'Noto Sans KR', sans-serif; }
 .qna--item__update { position: absolute; right: 3.5rem; bottom: 0.2rem; font-size: 1.25rem; cursor: pointer;}
 
 .email-check-message { position: absolute; left: -0.6rem; bottom: 0; font-size: 0.75rem; color: #f86d7d; }
+/* 관리자 페이지 - 상품목록 상품번호에 마우스 hover 이벤트 추가 */
+.pro_idx:hover { cursor: pointer; text-decoration: underline; }
+/* 관리자 페이지 - 회원목록 회원번호에 마우스 hover 이벤트 추가 */
+.member-modal-open:hover { cursor: pointer; text-decoration: underline; }
+/* 관리자 페이지 - 주문목록 주문번호에 마우스 hover 이벤트 추가 */
+.order-modal-open:hover { cursor: pointer; text-decoration: underline; }

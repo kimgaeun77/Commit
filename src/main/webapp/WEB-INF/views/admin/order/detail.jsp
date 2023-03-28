@@ -91,7 +91,12 @@
         <div class="order-pay__info">
           <div class="order-pay__info-item">
             <span class="pay__info-item--left">쿠폰</span>
-            <span class="pay__info-item--right">${orderInfo.CP_NAME} ${orderInfo.CP_DISCOUNT}%</span>
+            <c:if test="${orderInfo.CP_NAME == null}">
+              <span class="pay__info-item--right">미사용</span>
+            </c:if>
+            <c:if test="${orderInfo.CP_NAME != null}">
+              <span class="pay__info-item--right">${orderInfo.CP_NAME} ${orderInfo.CP_DISCOUNT}%</span>
+            </c:if>
           </div>
           <div class="order-pay__info-item">
             <span class="pay__info-item--left">총 상품 가격</span>
